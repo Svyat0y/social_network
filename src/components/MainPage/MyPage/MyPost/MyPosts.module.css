@@ -1,0 +1,22 @@
+.myPost_main_wr {
+    max-width: 100%;
+    padding: 15px 25px;
+    box-sizing: border-box;
+}
+.myPost_main_wr form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.myPost_main_wr textarea {
+    margin: 10px 0;
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    resize: vertical;
+}
+.myPost_main_wr button {
+    width: 80px;
+    height: 25px;
+}

@@ -3,7 +3,7 @@ import classes from './MyPageHeader.module.css';
 
 const MyPageHeader = () => {
     return (
-        <div className={classes.wrapper}>
+        <div className={classes.pageHeader_wrapper}>
             Header page Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet consequuntur debitis dolorem
             doloremque eos, facilis laboriosam magni necessitatibus perferendis reiciendis similique, totam. Ab
             architecto asperiores consectetur, delectus ea exercitationem iste, laudantium obcaecati quas qui quibusdam
