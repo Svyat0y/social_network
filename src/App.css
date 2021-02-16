@@ -78,7 +78,7 @@ p {
     margin: 0 auto;
     display: grid;
     min-height: 100vh;
-    grid-template-rows: 80px 1fr 80px;
+    grid-template-rows: 80px 100% 80px;
     grid-template-columns: 100%;
     grid-template-areas:
 		"header"
@@ -88,21 +88,21 @@ p {
 .main {
 	display: grid;
 	grid-area: main;
-	grid-template-columns: 300px 1fr;
+	grid-template-columns: 30% 70%;
 	grid-template-areas: "aside mainPage";
 }
 
 @media (min-width: 320px) and (max-width: 639px) {
 	.main {
 		display: grid;
-		grid-template-columns: 1fr;
+		grid-template-columns: 100%;
 		grid-template-areas: "mainPage";
 	}
 }
 @media (min-width: 640px) and (max-width: 993px) {
 	.main {
 		display: grid;
-		grid-template-columns: 180px 1fr;
+		grid-template-columns: 25% 75%;
 		grid-template-areas: "aside mainPage";
 	}
 }

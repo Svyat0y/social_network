@@ -1,7 +1,7 @@
 .myPost_main_wr {
     max-width: 100%;
+    height: auto;
     padding: 15px 25px;
-    box-sizing: border-box;
 }
 .myPost_main_wr form {
     display: flex;
