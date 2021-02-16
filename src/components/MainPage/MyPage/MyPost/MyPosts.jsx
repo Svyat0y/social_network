@@ -12,7 +12,6 @@ const MyPosts = () => {
             </form>
             <MyPost message={'Ho, how are you?'}/>
             <MyPost message={"It's my first post"}/>
-            <MyPost message={"It's my first ddddddddd ddddd   sadasda asdasdasdasda sadsadsadsadsadsadsadasdasdsadsadsadasdasdasdsadsadsa sdsadsasadsadsdsadsadsadsadasdasdsa ddddd"}/>
         </div>
     );
 }

@@ -78,7 +78,7 @@ p {
     margin: 0 auto;
     display: grid;
     min-height: 100vh;
-    grid-template-rows: 80px 100% 80px;
+    grid-template-rows: 80px 1fr 80px;
     grid-template-columns: 100%;
     grid-template-areas:
 		"header"
@@ -88,7 +88,8 @@ p {
 .main {
 	display: grid;
 	grid-area: main;
-	grid-template-columns: 30% 70%;
+    width: 100%;
+	grid-template-columns: 1fr minmax(150px, 3fr);
 	grid-template-areas: "aside mainPage";
 }
 
