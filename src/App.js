@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter } from "react-router-dom";
 import './App.css';
 import Header from './components/Header/Header';
-import Aside from './components/Aside/Aside';
+import Aside from './components/MainPage/Aside/Aside';
 import Footer from './components/Footer/Footer';
 import MainPage from './components/MainPage/MainPage';
 

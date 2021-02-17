@@ -1,7 +1,8 @@
 .myPost_main_wr {
     max-width: 100%;
     height: auto;
-    padding: 15px 25px;
+    margin: 15px;
+    color: #fff;
 }
 .myPost_main_wr form {
     max-width: 100%;
@@ -17,7 +18,8 @@
     min-height: 100px;
     max-height: 300px;
     padding: 10px;
-    /*resize: vertical;*/
+    border-radius: 10px;
+    resize: vertical;
 }
 .myPost_main_wr button {
     width: 80px;

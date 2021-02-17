@@ -1,6 +1,6 @@
 
 .header {
-    background: #303030;
+    background: #20232A;
     grid-area: header;
     height: 80px;
     display: flex;
@@ -10,7 +10,7 @@
 }
 
 .header h1 {
-    color: #999797;
+    color: #73DAFB;
     font-weight: 700;
 }
 

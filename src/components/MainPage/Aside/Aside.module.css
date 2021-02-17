@@ -1,11 +1,11 @@
 
 .aside {
-    background: #343434;
-    color: #fff;
+    background: #292C34;
     grid-area: aside;
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    border-right: 1px solid rgba(65,70,83,0.5);
 }
 
 .nav {
@@ -30,7 +30,7 @@
 }
 
 .nav a.active {
-    color: gold;
+    color: #73DAFB;
 }
 
 

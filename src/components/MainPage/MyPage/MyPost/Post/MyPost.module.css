@@ -5,6 +5,8 @@
     max-width: 100%;
     height: auto;
     margin-top: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(65,70,83,0.5);
 }
 .img_wrapper {
     width: 60px;
@@ -22,7 +24,18 @@
 }
 .myPost_description_wrapper p {
     margin-bottom: 10px;
+    color: #fff;
 }
 .myPost_description_wrapper span {
     margin-top: 10px;
+}
+.likeMessage {
+    color: #73DAFB;
+    cursor: pointer;
+}
+.likeMessage:hover {
+    color: #5AA9C4;
+}
+.likeCount {
+    color: #fff;
 }

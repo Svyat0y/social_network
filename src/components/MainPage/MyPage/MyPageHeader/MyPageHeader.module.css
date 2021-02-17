@@ -1,5 +1,7 @@
 .pageHeader_wrapper {
-    width: 100%;
+    max-width: 100%;
     min-height: 300px;
-    background: #9E9898;
+    background: #ffffff;
+    margin: 35px 15px 0;
+    border-radius: 10px;
 }

@@ -1,5 +1,6 @@
 .mainPage {
-	color: #fff;
-	background: #4d4d4d;
+	background: #292C34;
 	grid-area: mainPage;
+	font-size: 18px;
+	color: #000;
 }
