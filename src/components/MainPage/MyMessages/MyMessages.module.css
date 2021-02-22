@@ -4,4 +4,15 @@
     background: #ffffff;
     margin: 35px 15px 0;
     border-radius: 10px;
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+}
+.dialog_items {
+    text-align: center;
+}
+.dialog {
+    margin: 25px 0;
+}
+.message {
+    margin: 25px 0;
 }

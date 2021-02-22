@@ -1,13 +1,35 @@
 import React from 'react';
 import classes from './MyMessages.module.css';
+import {NavLink} from "react-router-dom";
 
-const MyMessages = () => {
+const DialogItem = (props) => {
+    return (
+        <li className={classes.dialog}>
+            <NavLink to={'/myMessages/' + props.id}>{props.name}</NavLink>
+        </li>
+    );
+}
+
+const MessageItem = (props) => {
+    return <div className={classes.message}>{props.message}</div>
+}
+
+const MyMessages = (props) => {
     return (
         <div className={classes.wrapper}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci assumenda beatae commodi consectetur
-            delectus dolor doloribus ea expedita ipsa iure libero nemo placeat provident quasi quia, reiciendis unde
-            veritatis. Amet beatae deleniti dolorem earum expedita, ipsa magni maiores molestiae quaerat quam similique
-            veniam voluptate. Consectetur enim minima odit officiis placeat.
+            <ul className={classes.dialog_items}>
+                <DialogItem name='Andy' id='1' />
+                <DialogItem name='Panda' id='2' />
+                <DialogItem name='Sveta' id='3' />
+                <DialogItem name='Vika' id='4' />
+                <DialogItem name='Dasha' id='5' />
+                <DialogItem name='Lusya' id='6' />
+            </ul>
+            <div className={classes.dialog_messages}>
+                <MessageItem message='Hi' />
+                <MessageItem message='How are you??' />
+                <MessageItem message='Are you here' />
+            </div>
         </div>
     );
 }
