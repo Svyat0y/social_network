@@ -13,7 +13,7 @@ const App = (props) => {
         <Header />
         <main className="main">
           <Aside />
-          <MainPage {...props}/>
+          <MainPage messagesData={props.messagesData} dialogsData={props.dialogsData} postData={props.postData}/>
         </main>
         <Footer />
       </div>
