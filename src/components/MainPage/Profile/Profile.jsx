@@ -1,15 +1,15 @@
 import React from 'react';
-import classes from './MyPage.module.css';
+import classes from './Profile.module.css';
 import MyPosts from "./MyPost/MyPosts";
 import MyPageHeader from "./MyPageHeader/MyPageHeader";
 
-const MyPage = () => {
+const Profile = (props) => {
     return (
         <div className={classes.wrapper}>
             <MyPageHeader />
-            <MyPosts />
+            <MyPosts {...props}/>
         </div>
     );
 }
 
-export default MyPage;
+export default Profile;

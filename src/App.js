@@ -6,14 +6,14 @@ import Aside from './components/MainPage/Aside/Aside';
 import Footer from './components/Footer/Footer';
 import MainPage from './components/MainPage/MainPage';
 
-const App = () => {
+const App = (props) => {
   return (
     <BrowserRouter>
       <div className="App-wrapper">
         <Header />
         <main className="main">
-          <Aside/>
-          <MainPage/>
+          <Aside />
+          <MainPage {...props}/>
         </main>
         <Footer />
       </div>

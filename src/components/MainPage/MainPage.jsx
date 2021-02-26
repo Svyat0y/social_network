@@ -1,21 +1,21 @@
 import React from 'react';
 import classes from './MainPage.module.css';
-import MyPage from './MyPage/MyPage';
+import Profile from './Profile/Profile';
 import MyMessages from './MyMessages/MyMessages';
 import Music from "./Music/Music";
 import Notifications from './Notifications/Notifications';
 import MySettings from './MySettings/MySettings';
 import {Route} from "react-router-dom";
 
+const MainPage = (props) => {
 
-const MainPage = () => {
 	return (
 		<div className={classes.mainPage}>
-			<Route exact path='/' component={MyPage}/>
-			<Route path='/myMessages' component={MyMessages}/>
-			<Route path='/myMusic' component={Music}/>
-			<Route path='/notifications' component={Notifications}/>
-			<Route path='/mySettings' component={MySettings}/>
+			<Route exact path='/' render={() => <Profile {...props}/>}/>
+			<Route path='/myMessages' render={() => <MyMessages {...props} />}/>
+			<Route path='/myMusic' render={Music}/>
+			<Route path='/notifications' render={Notifications}/>
+			<Route path='/mySettings' render={MySettings}/>
 		</div>
 	);
 }
