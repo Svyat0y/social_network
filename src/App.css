@@ -24,9 +24,9 @@ nav, footer, header, aside {
 }
 
 html, body {
-    overflow-y: scroll;
+    overflow-x: hidden;
     height: auto;
-    width: 100%;
+    width: 100vw;
     line-height: 1;
     font-size: 14px;
     scroll-behavior: smooth;

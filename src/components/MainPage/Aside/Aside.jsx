@@ -37,7 +37,6 @@ const AvatarItem = (props) => {
 	);
 }
 
-
 const Aside = () => {
 	return (
 		<aside className={classes.aside}>
