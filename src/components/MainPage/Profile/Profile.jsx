@@ -7,7 +7,7 @@ const Profile = (props) => {
     return (
         <div className={classes.wrapper}>
             <MyPageHeader />
-            <MyPosts {...props}/>
+            <MyPosts postData={props.state.postData}/>
         </div>
     );
 }

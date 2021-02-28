@@ -14,6 +14,12 @@ const MyPosts = (props) => {
                 <button type="button">Add post</button>
             </form>
             {posts}
+            {posts}
+            {posts}
+            {posts}
+            {posts}
+            {posts}
+            {posts}
         </div>
     );
 }

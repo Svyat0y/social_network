@@ -2,29 +2,36 @@
 .aside {
     background: #292C34;
     grid-area: aside;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
     border-right: 1px solid rgba(65,70,83,0.5);
+    position: relative;
 }
 
-.nav {
+.nav_wrapper {
     margin-top: 25px;
-    position: fixed;
-    height: 230px;
+    max-height: 30%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
+.nav {
+    padding: 0 20px;
+    width: 100%;
+}
+
 
 .nav li {
     padding: 10px 0;
 }
 
 .nav li:last-child {
-    position: absolute;
+    margin-top: 25px;
     left: 0;
     bottom: 0;
 }
 
-.nav a {
+.nav a,
+.avatar_wrapper span {
     color: white;
     font-size: 20px;
 }
@@ -32,6 +39,52 @@
 .nav a.active {
     color: #73DAFB;
 }
+
+.avatar_wrapper {
+    margin-top: 100px;
+    height: auto;
+    width: 100%;
+    padding: 0 20px;
+}
+.avatar_wrapper span {
+    display: block;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.user_block_wrapper {
+    width: 100%;
+    max-height: 215px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+}
+.user_box {
+    flex: 0 0 25%;
+    margin: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.user_img_wr {
+    width: 40px;
+    height: 40px;
+}
+.user_img_wr img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.user_name {
+    color: white;
+    margin-top: 4px;
+}
+
 
 
 @media (max-width: 639px) {
