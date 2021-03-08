@@ -19,6 +19,16 @@ let state = {
 			{id: 0, message: 'Ho, how are you?', likeCount: 15},
 			{id: 1, message: "It's my first post", likeCount: 34},
 		]
+	},
+	sideBar: {
+		avatarsData: [
+			{id: 0, userName: 'Andy'},
+			{id: 1, userName: 'Panda'},
+			{id: 2, userName: 'Dasha'},
+			{id: 3, userName: 'Vika'},
+			{id: 4, userName: 'Masha'},
+			{id: 5, userName: 'Tanya'}
+		]
 	}
 }
 

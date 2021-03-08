@@ -12,7 +12,7 @@ const App = (props) => {
       <div className="App-wrapper">
         <Header />
         <main className="main">
-          <Aside />
+          <Aside sideBar={props.state.sideBar} />
           <MainPage state={props.state}/>
         </main>
         <Footer />

@@ -30,8 +30,7 @@
     bottom: 0;
 }
 
-.nav a,
-.avatar_wrapper span {
+.nav a {
     color: white;
     font-size: 20px;
 }
@@ -40,49 +39,6 @@
     color: #73DAFB;
 }
 
-.avatar_wrapper {
-    margin-top: 100px;
-    height: auto;
-    width: 100%;
-}
-.avatar_wrapper span {
-    display: block;
-    text-align: center;
-    margin-bottom: 15px;
-}
-
-.user_block_wrapper {
-    width: 100%;
-    max-height: 215px;
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    overflow-x: hidden;
-}
-.user_box {
-    flex: 0 0 25%;
-    margin: 6px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.user_img_wr {
-    width: 40px;
-    height: 40px;
-}
-.user_img_wr img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    overflow: hidden;
-}
-.user_name {
-    color: white;
-    margin-top: 4px;
-}
 
 
 
