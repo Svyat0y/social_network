@@ -4,16 +4,22 @@ import {NavLink} from "react-router-dom";
 import userAvatar from "../../../../img/user_avatar.svg";
 
 const DialogItem = (props) => {
-    return (
-        <div className={classes.dialogItem_wrapper}>
-            <div className={classes.user_img_wr}>
-                <img src={userAvatar} alt="avatar"/>
-            </div>
-            <li className={classes.dialog}>
-                <NavLink to={'/myMessages/' + props.id}>{props.name}</NavLink>
-            </li>
-        </div>
-    );
+	return (
+		<NavLink to={'/myMessages/' + props.id}>
+			<div className={classes.dialogItem_wrapper}>
+				<div className={classes.user_img_wr}>
+					<img src={userAvatar} alt="avatar"/>
+				</div>
+				<li className={classes.dialog}>
+					{props.name}
+				</li>
+			</div>
+		</NavLink>
+	);
 }
 
 export default DialogItem;
+
+// 			<li className={classes.dialog}>
+// 				<NavLink to={'/myMessages/' + props.id}>{props.name}</NavLink>
+// 			</li>

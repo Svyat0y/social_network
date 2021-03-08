@@ -1,9 +1,7 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 import classes from './Aside.module.css';
-import userAvatar from '../../../img/user_avatar.svg';
 import Avatars from "./Avatars/Avatars";
-
 
 
 const Aside = (props) => {
@@ -17,7 +15,7 @@ const Aside = (props) => {
 					<li><NavLink to='/notifications' activeClassName={classes.active}>My notifications</NavLink></li>
 					<li><NavLink to='/mySettings' activeClassName={classes.active}>My settings</NavLink></li>
 				</ul>
-				<Avatars stateAvatarsData={props.sideBar.avatarsData} />
+				<Avatars stateAvatarsData={props.sideBar.avatarsData}/>
 			</div>
 		</aside>
 	);

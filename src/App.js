@@ -1,5 +1,4 @@
 import React from 'react';
-import { BrowserRouter } from "react-router-dom";
 import './App.css';
 import Header from './components/Header/Header';
 import Aside from './components/MainPage/Aside/Aside';
@@ -8,16 +7,14 @@ import MainPage from './components/MainPage/MainPage';
 
 const App = (props) => {
   return (
-    <BrowserRouter>
       <div className="App-wrapper">
-        <Header />
+        <Header/>
         <main className="main">
-          <Aside sideBar={props.state.sideBar} />
+          <Aside sideBar={props.state.sideBar}/>
           <MainPage state={props.state}/>
         </main>
-        <Footer />
+        <Footer/>
       </div>
-    </BrowserRouter>
   );
 }
 
