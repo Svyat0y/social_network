@@ -1,6 +1,6 @@
 .wrapper {
     max-width: 100%;
-    max-height: 660px;
+    height: 660px;
     margin: 35px 15px 0;
     border-radius: 10px;
     display: grid;
@@ -13,6 +13,7 @@
     align-items: center;
     width: 100%;
     padding: 10px;
+    transition: all .2s ease;
 }
 
 .dialog_items {
@@ -80,6 +81,11 @@
     border: 1px solid #292C34;
     border-radius: 5px;
     overflow-x: hidden;
+    background: transparent;
+    transition: all .2s ease;
+}
+.dialog_messages button:hover {
+    background: rgba(129,218,251, 0.8);
 }
 .btnMessages {
     display: flex;

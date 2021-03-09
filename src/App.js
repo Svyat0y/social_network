@@ -11,7 +11,7 @@ const App = (props) => {
         <Header/>
         <main className="main">
           <Aside sideBar={props.state.sideBar}/>
-          <MainPage state={props.state}/>
+          <MainPage state={props.state} addPost={props.addPost}/>
         </main>
         <Footer/>
       </div>

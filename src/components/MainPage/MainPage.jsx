@@ -11,7 +11,7 @@ const MainPage = (props) => {
 
     return (
         <div className={classes.mainPage}>
-            <Route exact path='/' render={() => <Profile stateProfilePage={props.state.profilePage}/>}/>
+            <Route exact path='/' render={() => <Profile stateProfilePage={props.state.profilePage} addPost={props.addPost}/>}/>
             <Route path='/myMessages' render={() => <MyMessages stateMessagesPage={props.state.messagesPage}/>}/>
             <Route path='/myMusic' render={Music}/>
             <Route path='/notifications' render={Notifications}/>
