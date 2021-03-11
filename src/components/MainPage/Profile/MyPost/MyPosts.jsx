@@ -8,9 +8,11 @@ const MyPosts = (props) => {
 
 	const newPostElement = React.createRef()
 
+	// вызываем функцию onClick, считываем данные с textarea и добавляем введенный пост
 	const addPost = () => {
 		let text = newPostElement.current.value
 		props.addPost(text)
+		newPostElement.current.value = ''
 	}
 
 	return (

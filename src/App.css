@@ -22,12 +22,13 @@ a:focus, a:active {
 nav, footer, header, aside {
     display: block;
 }
-
+body {
+    padding: 0 15px;
+}
 html, body {
     overflow-x: hidden;
     height: auto;
     width: 100vw;
-    padding-right: 15px;
     line-height: 1;
     font-size: 14px;
     scroll-behavior: smooth;
@@ -76,7 +77,7 @@ p {
 /*--------------------*/
 
 .App-wrapper {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     display: grid;
     min-height: 100vh;
