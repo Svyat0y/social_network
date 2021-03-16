@@ -7,7 +7,12 @@ const Profile = (props) => {
     return (
         <div className={classes.wrapper}>
             <MyPageHeader />
-            <MyPosts postData={props.stateProfilePage.postData} addPost={props.addPost}/>
+            <MyPosts
+                postData={props.stateProfilePage.postData}
+                newPostText={props.stateProfilePage.newPostText}
+                addPost={props.addPost}
+                updatePostMessageText={props.updatePostMessageText}
+            />
         </div>
     );
 }

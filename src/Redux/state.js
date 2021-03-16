@@ -20,7 +20,8 @@ let state = {
 		postData: [
 			{id: 0, message: 'Hi, how are you?', likeCount: 15},
 			{id: 1, message: "It's my first post", likeCount: 34},
-		]
+		],
+		newPostText: ""
 	},
 	sideBar: {
 		avatarsData: [
@@ -34,13 +35,17 @@ let state = {
 	}
 }
 
-export const addPost = (postMessage) => {
+export const addPost = () => {
 	let newPost = {
 		id: 2,
-		message: postMessage,
+		message: state.profilePage.newPostText,
 		likeCount: 0,
 	}
 	state.profilePage.postData.push(newPost)
+	rerenderEntireTree(state)
+}
+export const updatePostMessageText = (newText) => {
+	state.profilePage.newPostText = newText
 	rerenderEntireTree(state)
 }
 

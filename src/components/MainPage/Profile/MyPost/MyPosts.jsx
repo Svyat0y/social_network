@@ -4,23 +4,38 @@ import MyPost from "./Post/MyPost";
 
 const MyPosts = (props) => {
 
-	let posts = props.postData.map(p => <MyPost likeCount={p.likeCount} message={p.message} key={p.id}/>)
+	const posts = props.postData.map(p => <MyPost likeCount={p.likeCount} message={p.message} key={p.id}/>)
 
 	const newPostElement = React.createRef()
 
 	// вызываем функцию onClick, считываем данные с textarea и добавляем введенный пост
 	const addPost = () => {
+		props.addPost()
+		props.updatePostMessageText("")
+	}
+
+	const onChangePostText = () => {
 		let text = newPostElement.current.value
-		props.addPost(text)
-		newPostElement.current.value = ''
+		props.updatePostMessageText(text)
 	}
 
 	return (
 		<div className={classes.myPost_main_wr}>
 			<span>My Post</span>
 			<form>
-				<textarea ref={newPostElement} name="post"/>
-				<button onClick={addPost} type="button">Add post</button>
+				<textarea
+					onChange={onChangePostText}
+					ref={newPostElement}
+					value={props.newPostText}
+					placeholder='write a message'
+					name="post"
+				/>
+				<button
+					onClick={addPost}
+					type="button"
+				>
+					Add post
+				</button>
 			</form>
 			{posts}
 		</div>
