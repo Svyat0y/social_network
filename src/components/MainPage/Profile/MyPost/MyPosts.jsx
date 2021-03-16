@@ -11,7 +11,6 @@ const MyPosts = (props) => {
 	// вызываем функцию onClick, считываем данные с textarea и добавляем введенный пост
 	const addPost = () => {
 		props.addPost()
-		props.updatePostMessageText("")
 	}
 
 	const onChangePostText = () => {

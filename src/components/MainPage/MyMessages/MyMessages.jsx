@@ -38,10 +38,24 @@ const MyMessages = (props) => {
 						{messages}
 					</div>
 					<form>
-						<textarea ref={newMessageElementIDialogs} name="text"/>
+						<textarea
+							ref={newMessageElementIDialogs}
+							placeholder='write a message'
+							name="text"
+						/>
 						<div className={classes.btnMessages}>
-							<button onClick={addMessageInDialog} type="button">Add message</button>
-							<button onClick={clearMessageInDialog} type="button">Clear message</button>
+							<button
+								onClick={addMessageInDialog}
+								type="button"
+							>
+								Add message
+							</button>
+							<button
+								onClick={clearMessageInDialog}
+								type="button"
+							>
+								Clear message
+							</button>
 						</div>
 					</form>
 				</div>

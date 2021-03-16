@@ -42,6 +42,7 @@ export const addPost = () => {
 		likeCount: 0,
 	}
 	state.profilePage.postData.push(newPost)
+	state.profilePage.newPostText = ""
 	rerenderEntireTree(state)
 }
 export const updatePostMessageText = (newText) => {
