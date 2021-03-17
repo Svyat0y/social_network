@@ -22,6 +22,7 @@ const MainPage = (props) => {
                     stateMessagesPage={props.state.messagesPage}
                     addDialogMessage={props.addDialogMessage}
                     updateDialogMessageText={props.updateDialogMessageText}
+                    clearDialogMessageText={props.clearDialogMessageText}
                 />}/>
             <Route path='/myMusic' render={Music}/>
             <Route path='/notifications' render={Notifications}/>

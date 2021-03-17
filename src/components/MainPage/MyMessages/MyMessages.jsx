@@ -29,11 +29,7 @@ const MyMessages = (props) => {
 	}
 
 	const clearMessageInDialog = () => {
-		if (newMessageElementIDialogs.current.value) {
-			newMessageElementIDialogs.current.value = ''
-		} else {
-			return false
-		}
+		props.clearDialogMessageText()
 	}
 
 	return (

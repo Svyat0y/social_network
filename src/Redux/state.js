@@ -77,4 +77,13 @@ export const updateDialogMessageText = (newText) => {
 	rerenderEntireTree(state)
 }
 
+export const clearDialogMessageText = () => {
+	if(state.messagesPage.newMessageText) {
+		state.messagesPage.newMessageText = ""
+		rerenderEntireTree(state)
+	} else {
+		return false
+	}
+}
+
 export default state;

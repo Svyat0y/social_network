@@ -17,6 +17,7 @@ const App = (props) => {
               addDialogMessage={props.addDialogMessage}
               updatePostMessageText={props.updatePostMessageText}
               updateDialogMessageText={props.updateDialogMessageText}
+              clearDialogMessageText={props.clearDialogMessageText}
           />
         </main>
         <Footer/>

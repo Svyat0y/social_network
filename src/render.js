@@ -4,7 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom";
-import {addDialogMessage, addPost, updateDialogMessageText, updatePostMessageText} from "./Redux/state";
+import {
+	addDialogMessage,
+	addPost,
+	clearDialogMessageText,
+	updateDialogMessageText,
+	updatePostMessageText
+} from "./Redux/state";
 
 export const rerenderEntireTree = (state) => {
 	ReactDOM.render(
@@ -16,6 +22,7 @@ export const rerenderEntireTree = (state) => {
 					addDialogMessage={addDialogMessage}
 					updatePostMessageText={updatePostMessageText}
 					updateDialogMessageText={updateDialogMessageText}
+					clearDialogMessageText={clearDialogMessageText}
 				/>
 			</React.StrictMode>
 		</BrowserRouter>,
