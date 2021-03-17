@@ -11,10 +11,11 @@ let state = {
 			{id: 7, name: 'Lusya'}
 		],
 		messagesData: [
-			{id: 0, message: 'Hi'},
-			{id: 1, message: 'How are you?'},
-			{id: 2, message: 'Are you here??'}
-		]
+			// {id: 0, message: 'Hi'},
+			// {id: 1, message: 'How are you?'},
+			// {id: 2, message: 'Are you here??'}
+		],
+		newMessageText: ""
 	},
 	profilePage: {
 		postData: [
@@ -35,18 +36,44 @@ let state = {
 	}
 }
 
+window.state = state
+
 export const addPost = () => {
-	let newPost = {
-		id: 2,
-		message: state.profilePage.newPostText,
-		likeCount: 0,
+	if(state.profilePage.newPostText && state.profilePage.newPostText.replace(/\s/g,"")) {
+		let newPost = {
+			id: 2,
+			message: state.profilePage.newPostText,
+			likeCount: 0,
+		}
+		state.profilePage.postData.push(newPost)
+		state.profilePage.newPostText = ""
+		rerenderEntireTree(state)
+	} else {
+		return false
 	}
-	state.profilePage.postData.push(newPost)
-	state.profilePage.newPostText = ""
-	rerenderEntireTree(state)
 }
+
 export const updatePostMessageText = (newText) => {
 	state.profilePage.newPostText = newText
+	rerenderEntireTree(state)
+}
+
+export const addDialogMessage = (i) => {
+	if(state.messagesPage.newMessageText && state.messagesPage.newMessageText.replace(/\s/g,"")) {
+		let newDialogMessage = {
+			id: i,
+			message: state.messagesPage.newMessageText
+		}
+		state.messagesPage.messagesData.push(newDialogMessage)
+		state.messagesPage.newMessageText = ""
+		rerenderEntireTree(state)
+	} else {
+		return false
+	}
+}
+
+export const updateDialogMessageText = (newText) => {
+	state.messagesPage.newMessageText = newText
 	rerenderEntireTree(state)
 }
 

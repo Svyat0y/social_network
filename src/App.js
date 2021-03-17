@@ -14,7 +14,9 @@ const App = (props) => {
           <MainPage
               state={props.state}
               addPost={props.addPost}
+              addDialogMessage={props.addDialogMessage}
               updatePostMessageText={props.updatePostMessageText}
+              updateDialogMessageText={props.updateDialogMessageText}
           />
         </main>
         <Footer/>

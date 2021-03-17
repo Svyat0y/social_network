@@ -10,13 +10,22 @@ const MyMessages = (props) => {
 
 	const newMessageElementIDialogs = React.createRef()
 
-	const addMessageInDialog = () => {
-		if (newMessageElementIDialogs.current.value) {
-			let messageInDialog = newMessageElementIDialogs.current.value
-			alert(messageInDialog)
-		} else {
-			return false
-		}
+	// const addMessageInDialog = () => {
+	// 	if (newMessageElementIDialogs.current.value) {
+	// 		let messageInDialog = newMessageElementIDialogs.current.value
+	// 		alert(messageInDialog)
+	// 	} else {
+	// 		return false
+	// 	}
+	// }
+
+	const addDialogMessage = () => {
+		props.addDialogMessage()
+	}
+
+	const onChangeMessageText = () => {
+		let text = newMessageElementIDialogs.current.value
+		props.updateDialogMessageText(text)
 	}
 
 	const clearMessageInDialog = () => {
@@ -40,12 +49,14 @@ const MyMessages = (props) => {
 					<form>
 						<textarea
 							ref={newMessageElementIDialogs}
+							onChange={onChangeMessageText}
+							value={props.stateMessagesPage.newMessageText}
 							placeholder='write a message'
 							name="text"
 						/>
 						<div className={classes.btnMessages}>
 							<button
-								onClick={addMessageInDialog}
+								onClick={addDialogMessage}
 								type="button"
 							>
 								Add message
