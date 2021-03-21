@@ -28,6 +28,7 @@ const MyPosts = (props) => {
 					value={props.newPostText}
 					placeholder='write a message'
 					name="post"
+					autoFocus={true}
 				/>
 				<button
 					onClick={addPost}

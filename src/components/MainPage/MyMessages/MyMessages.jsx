@@ -19,15 +19,18 @@ const MyMessages = (props) => {
 	// 	}
 	// }
 
+	// добавляем сообщение
 	const addDialogMessage = () => {
 		props.addDialogMessage()
 	}
 
+	// отслеживаем вводимые данные
 	const onChangeMessageText = () => {
 		let text = newMessageElementIDialogs.current.value
 		props.updateDialogMessageText(text)
 	}
 
+	// чистим введенные данные
 	const clearMessageInDialog = () => {
 		props.clearDialogMessageText()
 	}
@@ -49,6 +52,7 @@ const MyMessages = (props) => {
 							value={props.stateMessagesPage.newMessageText}
 							placeholder='write a message'
 							name="text"
+							autoFocus={true}
 						/>
 						<div className={classes.btnMessages}>
 							<button

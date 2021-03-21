@@ -1,5 +1,6 @@
 import {rerenderEntireTree} from "../render";
 
+// наш главный стейт с данными ( статический )
 let state = {
 	messagesPage: {
 		dialogsData: [
@@ -11,9 +12,9 @@ let state = {
 			{id: 7, name: 'Lusya'}
 		],
 		messagesData: [
-			// {id: 0, message: 'Hi'},
-			// {id: 1, message: 'How are you?'},
-			// {id: 2, message: 'Are you here??'}
+			{id: 0, message: 'Hi'},
+			{id: 1, message: 'How are you?'},
+			{id: 2, message: 'Are you here??'}
 		],
 		newMessageText: ""
 	},
@@ -38,6 +39,7 @@ let state = {
 
 window.state = state
 
+// функция добавления поста на главную страницу, вноси созданный объект в стейт, обнуляем строку и рендерим компонент
 export const addPost = () => {
 	if(state.profilePage.newPostText && state.profilePage.newPostText.replace(/\s/g,"")) {
 		let newPost = {
@@ -53,11 +55,13 @@ export const addPost = () => {
 	}
 }
 
+// функция, которая отслеживает вводимые данные, сразу же меняет их в стейт и рендерит компонент
 export const updatePostMessageText = (newText) => {
 	state.profilePage.newPostText = newText
 	rerenderEntireTree(state)
 }
 
+// функция добавления сообщения в диалогах
 export const addDialogMessage = (i) => {
 	if(state.messagesPage.newMessageText && state.messagesPage.newMessageText.replace(/\s/g,"")) {
 		let newDialogMessage = {
@@ -72,11 +76,13 @@ export const addDialogMessage = (i) => {
 	}
 }
 
+// функция, которая отслеживает вводимые данные, сразу же меняет их в стейт и рендерит компонент
 export const updateDialogMessageText = (newText) => {
 	state.messagesPage.newMessageText = newText
 	rerenderEntireTree(state)
 }
 
+//функция, которая чистит весь введенный текст в поле ввода в сообщениях
 export const clearDialogMessageText = () => {
 	if(state.messagesPage.newMessageText) {
 		state.messagesPage.newMessageText = ""
