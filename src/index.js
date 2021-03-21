@@ -1,11 +1,40 @@
+import state, {subscriber} from "./Redux/state";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {rerenderEntireTree} from "./render";
-import state from "./Redux/state";
+import {BrowserRouter} from "react-router-dom";
+import {
+	addDialogMessage,
+	addPost,
+	clearDialogMessageText,
+	updateDialogMessageText,
+	updatePostMessageText
+} from "./Redux/state";
 
+const rerenderEntireTree = (state) => {
+	ReactDOM.render(
+		<BrowserRouter>
+			<React.StrictMode>
+				<App
+					state={state}
+					addPost={addPost}
+					addDialogMessage={addDialogMessage}
+					updatePostMessageText={updatePostMessageText}
+					updateDialogMessageText={updateDialogMessageText}
+					clearDialogMessageText={clearDialogMessageText}
+				/>
+			</React.StrictMode>
+		</BrowserRouter>,
+		document.getElementById('root')
+	);
+}
 
+// отрисовка всего приложения
 rerenderEntireTree(state)
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+// передаём в качестве аргумента нашу функцию отрисовки приложения
+subscriber(rerenderEntireTree)
+
 reportWebVitals();

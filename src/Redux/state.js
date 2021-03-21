@@ -1,4 +1,7 @@
-import {rerenderEntireTree} from "../render";
+// заглушка по умолчанию, которая все равно переназначается внутри функции subscriber
+let rerenderEntireTree =() => {
+	console.log('state changed')
+}
 
 // наш главный стейт с данными ( статический )
 let state = {
@@ -90,6 +93,11 @@ export const clearDialogMessageText = () => {
 	} else {
 		return false
 	}
+}
+
+// наш наблюдатель, которому в качестве аргумента прилетает функция отрисовки приложения из index.js, которую мы позже вызываем при каждом изменении UI
+ export const subscriber = (observer) => {
+	rerenderEntireTree = observer
 }
 
 export default state;
