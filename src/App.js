@@ -14,7 +14,7 @@ const App = (props) => {
           <MainPage
               state={props.state}
               addPost={props.addPost}
-              addDialogMessage={props.addDialogMessage}
+              addDialogMessage={props.addMessage}
               updatePostMessageText={props.updatePostMessageText}
               updateDialogMessageText={props.updateDialogMessageText}
               clearDialogMessageText={props.clearDialogMessageText}
