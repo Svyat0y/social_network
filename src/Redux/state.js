@@ -92,7 +92,7 @@ const store = {
 		if(action.type === 'ADD-POST') {
 			if (this._state.profilePage.newPostText && this._state.profilePage.newPostText.replace(/\s/g, "")) {
 				let newPost = {
-					id: 2,
+					id: 5,
 					message: this._state.profilePage.newPostText,
 					likeCount: 0,
 				}
