@@ -13,11 +13,12 @@ const rerenderEntireTree = (state) => {
 			<React.StrictMode>
 				<App
 					state={state}
-					addPost={store.addPost.bind(store)}
-					addMessage={store.addMessage.bind(store)}
-					updatePostMessageText={store.updatePostMessageText.bind(store)}
-					updateDialogMessageText={store.updateDialogMessageText.bind(store)}
-					clearDialogMessageText={store.clearDialogMessageText.bind(store)}
+					dispatch={store.dispatch.bind(store)}
+					// addPost={store.addPost.bind(store)}
+					// addMessage={store.addMessage.bind(store)}
+					// updatePostMessageText={store.updatePostMessageText.bind(store)}
+					// updateDialogMessageText={store.updateDialogMessageText.bind(store)}
+					// clearDialogMessageText={store.clearDialogMessageText.bind(store)}
 				/>
 			</React.StrictMode>
 		</BrowserRouter>,

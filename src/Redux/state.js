@@ -34,57 +34,100 @@ const store = {
 			]
 		}
 	},
-	rerenderEntireTree() {
+	_callSubscriber() {
 		console.log('state changed')
 	},
+
 	getState() {
 		return this._state
 	},
-	addPost() {
-		if (this._state.profilePage.newPostText && this._state.profilePage.newPostText.replace(/\s/g, "")) {
-			let newPost = {
-				id: 2,
-				message: this._state.profilePage.newPostText,
-				likeCount: 0,
-			}
-			this._state.profilePage.postData.push(newPost)
-			this._state.profilePage.newPostText = ""
-			this.rerenderEntireTree(this._state)
-		} else {
-			return false
-		}
-	},
-	addMessage() {
-		if (this._state.messagesPage.newMessageText && this._state.messagesPage.newMessageText.replace(/\s/g, "")) {
-			let newDialogMessage = {
-				id: 3,
-				message: this._state.messagesPage.newMessageText
-			}
-			this._state.messagesPage.messagesData.push(newDialogMessage)
-			this._state.messagesPage.newMessageText = ""
-			this.rerenderEntireTree(this._state)
-		} else {
-			return false
-		}
-	},
-	updatePostMessageText(newText) {
-		this._state.profilePage.newPostText = newText
-		this.rerenderEntireTree(this._state)
-	},
-	updateDialogMessageText(newText) {
-		this._state.messagesPage.newMessageText = newText
-		this.rerenderEntireTree(this._state)
-	},
-	clearDialogMessageText() {
-		if (this._state.messagesPage.newMessageText) {
-			this._state.messagesPage.newMessageText = ""
-			this.rerenderEntireTree(this._state)
-		} else {
-			return false
-		}
-	},
 	subscribe(observer) {
-		this.rerenderEntireTree = observer
+		this._callSubscriber = observer
+	},
+	// наши методы до добавления dispatch
+	// addPost() {
+	// 	if (this._state.profilePage.newPostText && this._state.profilePage.newPostText.replace(/\s/g, "")) {
+	// 		let newPost = {
+	// 			id: 2,
+	// 			message: this._state.profilePage.newPostText,
+	// 			likeCount: 0,
+	// 		}
+	// 		this._state.profilePage.postData.push(newPost)
+	// 		this._state.profilePage.newPostText = ""
+	// 		this.rerenderEntireTree(this._state)
+	// 	} else {
+	// 		return false
+	// 	}
+	// },
+	// addMessage() {
+	// 	if (this._state.messagesPage.newMessageText && this._state.messagesPage.newMessageText.replace(/\s/g, "")) {
+	// 		let newDialogMessage = {
+	// 			id: 3,
+	// 			message: this._state.messagesPage.newMessageText
+	// 		}
+	// 		this._state.messagesPage.messagesData.push(newDialogMessage)
+	// 		this._state.messagesPage.newMessageText = ""
+	// 		this.rerenderEntireTree(this._state)
+	// 	} else {
+	// 		return false
+	// 	}
+	// },
+	// updatePostMessageText(newText) {
+	// 	this._state.profilePage.newPostText = newText
+	// 	this.rerenderEntireTree(this._state)
+	// },
+	// updateDialogMessageText(newText) {
+	// 	this._state.messagesPage.newMessageText = newText
+	// 	this.rerenderEntireTree(this._state)
+	// },
+	// clearDialogMessageText() {
+	// 	if (this._state.messagesPage.newMessageText) {
+	// 		this._state.messagesPage.newMessageText = ""
+	// 		this.rerenderEntireTree(this._state)
+	// 	} else {
+	// 		return false
+	// 	}
+	// },
+	dispatch(action) {
+		if(action.type === 'ADD-POST') {
+			if (this._state.profilePage.newPostText && this._state.profilePage.newPostText.replace(/\s/g, "")) {
+				let newPost = {
+					id: 2,
+					message: this._state.profilePage.newPostText,
+					likeCount: 0,
+				}
+				this._state.profilePage.postData.push(newPost)
+				this._state.profilePage.newPostText = ""
+				this._callSubscriber(this._state)
+			} else {
+				return false
+			}
+		} else if(action.type === 'UPDATE-POST-MESSAGE-TEXT') {
+			this._state.profilePage.newPostText = action.newText
+			this._callSubscriber(this._state)
+		} else if(action.type === 'ADD-MESSAGE') {
+			if (this._state.messagesPage.newMessageText && this._state.messagesPage.newMessageText.replace(/\s/g, "")) {
+				let newDialogMessage = {
+					id: 3,
+					message: this._state.messagesPage.newMessageText
+				}
+				this._state.messagesPage.messagesData.push(newDialogMessage)
+				this._state.messagesPage.newMessageText = ""
+				this._callSubscriber(this._state)
+			} else {
+				return false
+			}
+		} else if(action.type === 'UPDATE-DIALOG-MESSAGE-TEXT') {
+			this._state.messagesPage.newMessageText = action.newText
+			this._callSubscriber(this._state)
+		} else if(action.type === 'CLEAR-DIALOG-MESSAGE-TEXT') {
+			if (this._state.messagesPage.newMessageText) {
+				this._state.messagesPage.newMessageText = ""
+				this._callSubscriber(this._state)
+			} else {
+				return false
+			}
+		}
 	}
 }
 window.store = store

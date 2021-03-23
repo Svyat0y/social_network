@@ -13,11 +13,12 @@ const App = (props) => {
           <Aside sideBar={props.state.sideBar}/>
           <MainPage
               state={props.state}
-              addPost={props.addPost}
-              addDialogMessage={props.addMessage}
-              updatePostMessageText={props.updatePostMessageText}
-              updateDialogMessageText={props.updateDialogMessageText}
-              clearDialogMessageText={props.clearDialogMessageText}
+              dispatch={props.dispatch}
+              // addPost={props.addPost}
+              // addDialogMessage={props.addMessage}
+              // updatePostMessageText={props.updatePostMessageText}
+              // updateDialogMessageText={props.updateDialogMessageText}
+              // clearDialogMessageText={props.clearDialogMessageText}
           />
         </main>
         <Footer/>

@@ -14,15 +14,17 @@ const MainPage = (props) => {
             <Route exact path='/' render={() =>
                 <Profile
                     stateProfilePage={props.state.profilePage}
-                    addPost={props.addPost}
-                    updatePostMessageText={props.updatePostMessageText}
+                    dispatch={props.dispatch}
+                    // addPost={props.addPost}
+                    // updatePostMessageText={props.updatePostMessageText}
                 />}/>
             <Route path='/myMessages' render={() =>
                 <MyMessages
                     stateMessagesPage={props.state.messagesPage}
-                    addDialogMessage={props.addDialogMessage}
-                    updateDialogMessageText={props.updateDialogMessageText}
-                    clearDialogMessageText={props.clearDialogMessageText}
+                    dispatch={props.dispatch}
+                    // addDialogMessage={props.addDialogMessage}
+                    // updateDialogMessageText={props.updateDialogMessageText}
+                    // clearDialogMessageText={props.clearDialogMessageText}
                 />}/>
             <Route path='/myMusic' render={Music}/>
             <Route path='/notifications' render={Notifications}/>

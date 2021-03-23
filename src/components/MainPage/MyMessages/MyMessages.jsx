@@ -21,18 +21,18 @@ const MyMessages = (props) => {
 
 	// добавляем сообщение
 	const addDialogMessage = () => {
-		props.addDialogMessage()
+		props.dispatch({type: 'ADD-MESSAGE'})
 	}
 
 	// отслеживаем вводимые данные
 	const onChangeMessageText = () => {
 		let text = newMessageElementIDialogs.current.value
-		props.updateDialogMessageText(text)
+		props.dispatch({type: 'UPDATE-DIALOG-MESSAGE-TEXT', newText: text})
 	}
 
 	// чистим введенные данные
 	const clearMessageInDialog = () => {
-		props.clearDialogMessageText()
+		props.dispatch({type: 'CLEAR-DIALOG-MESSAGE-TEXT'})
 	}
 
 	return (

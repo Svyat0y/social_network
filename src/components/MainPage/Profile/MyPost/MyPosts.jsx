@@ -10,12 +10,12 @@ const MyPosts = (props) => {
 
 	// вызываем функцию onClick, считываем данные с textarea и добавляем введенный пост
 	const addPost = () => {
-		props.addPost()
+		props.dispatch({type: 'ADD-POST'})
 	}
 
 	const onChangePostText = () => {
 		let text = newPostElement.current.value
-		props.updatePostMessageText(text)
+		props.dispatch({type: 'UPDATE-POST-MESSAGE-TEXT', newText: text})
 	}
 
 	return (

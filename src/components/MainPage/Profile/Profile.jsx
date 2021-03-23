@@ -9,9 +9,10 @@ const Profile = (props) => {
             <MyPageHeader />
             <MyPosts
                 postData={props.stateProfilePage.postData}
-                newPostText={props.stateProfilePage.newPostText}
-                addPost={props.addPost}
-                updatePostMessageText={props.updatePostMessageText}
+                dispatch={props.dispatch}
+                // newPostText={props.stateProfilePage.newPostText}
+                // addPost={props.addPost}
+                // updatePostMessageText={props.updatePostMessageText}
             />
         </div>
     );
