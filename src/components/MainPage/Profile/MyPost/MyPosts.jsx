@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './MyPosts.module.css';
 import MyPost from "./Post/MyPost";
+import {addPostActionCreator, onChangePostTextActionCreator} from "../../../../Redux/state";
 
 const MyPosts = (props) => {
 
@@ -10,12 +11,12 @@ const MyPosts = (props) => {
 
 	// вызываем функцию onClick, считываем данные с textarea и добавляем введенный пост
 	const addPost = () => {
-		props.dispatch({type: 'ADD-POST'})
+		props.dispatch(addPostActionCreator())
 	}
 
 	const onChangePostText = () => {
 		let text = newPostElement.current.value
-		props.dispatch({type: 'UPDATE-POST-MESSAGE-TEXT', newText: text})
+		props.dispatch(onChangePostTextActionCreator(text))
 	}
 
 	return (

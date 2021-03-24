@@ -1,3 +1,9 @@
+const ADD_POST = 'ADD-POST'
+const ADD_MESSAGE = 'ADD-MESSAGE'
+const UPDATE_POST_MESSAGE_TEXT = 'UPDATE-POST-MESSAGE-TEXT'
+const UPDATE_DIALOG_MESSAGE_TEXT = 'UPDATE-DIALOG-MESSAGE-TEXT'
+const CLEAR_DIALOG_MESSAGE_TEXT = 'CLEAR-DIALOG-MESSAGE-TEXT'
+
 const store = {
 	_state: {
 		messagesPage: {
@@ -89,7 +95,7 @@ const store = {
 	// 	}
 	// },
 	dispatch(action) {
-		if(action.type === 'ADD-POST') {
+		if (action.type === 'ADD-POST') {
 			if (this._state.profilePage.newPostText && this._state.profilePage.newPostText.replace(/\s/g, "")) {
 				let newPost = {
 					id: 5,
@@ -102,10 +108,10 @@ const store = {
 			} else {
 				return false
 			}
-		} else if(action.type === 'UPDATE-POST-MESSAGE-TEXT') {
+		} else if (action.type === 'UPDATE-POST-MESSAGE-TEXT') {
 			this._state.profilePage.newPostText = action.newText
 			this._callSubscriber(this._state)
-		} else if(action.type === 'ADD-MESSAGE') {
+		} else if (action.type === 'ADD-MESSAGE') {
 			if (this._state.messagesPage.newMessageText && this._state.messagesPage.newMessageText.replace(/\s/g, "")) {
 				let newDialogMessage = {
 					id: 3,
@@ -117,10 +123,10 @@ const store = {
 			} else {
 				return false
 			}
-		} else if(action.type === 'UPDATE-DIALOG-MESSAGE-TEXT') {
+		} else if (action.type === 'UPDATE-DIALOG-MESSAGE-TEXT') {
 			this._state.messagesPage.newMessageText = action.newText
 			this._callSubscriber(this._state)
-		} else if(action.type === 'CLEAR-DIALOG-MESSAGE-TEXT') {
+		} else if (action.type === 'CLEAR-DIALOG-MESSAGE-TEXT') {
 			if (this._state.messagesPage.newMessageText) {
 				this._state.messagesPage.newMessageText = ""
 				this._callSubscriber(this._state)
@@ -130,16 +136,22 @@ const store = {
 		}
 	}
 }
+
+export const addPostActionCreator = () => ({type: ADD_POST})
+
+export const addMessageActionCreator = () => ({type: ADD_MESSAGE})
+
+export const onChangePostTextActionCreator = (text) => ({type: UPDATE_POST_MESSAGE_TEXT, newText: text})
+
+export const onChangeMessageTextActionCreator = (text) => ({type: UPDATE_DIALOG_MESSAGE_TEXT, newText: text})
+
+export const clearMessageInDialogActionCreator = () => ({type: CLEAR_DIALOG_MESSAGE_TEXT})
+
+
+
 window.store = store
 
 export default store;
-
-
-
-
-
-
-
 
 
 // ниже наш статический стейт, который мы искусственно создавали вначале
@@ -148,7 +160,6 @@ export default store;
 // let rerenderEntireTree = () => {
 // 	console.log('state changed')
 // }
-
 
 // наш главный стейт с данными ( статический )
 // let state = {

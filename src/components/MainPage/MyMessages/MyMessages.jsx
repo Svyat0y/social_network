@@ -2,6 +2,7 @@ import React from 'react';
 import classes from './MyMessages.module.css';
 import MessageItem from "./MessageItem/MessageItem";
 import DialogItem from "./DialogItem/DialogItem";
+import {addMessageActionCreator, clearMessageInDialogActionCreator, onChangeMessageTextActionCreator} from "../../../Redux/state";
 
 const MyMessages = (props) => {
 
@@ -10,29 +11,20 @@ const MyMessages = (props) => {
 
 	const newMessageElementIDialogs = React.createRef()
 
-	// const addMessageInDialog = () => {
-	// 	if (newMessageElementIDialogs.current.value) {
-	// 		let messageInDialog = newMessageElementIDialogs.current.value
-	// 		alert(messageInDialog)
-	// 	} else {
-	// 		return false
-	// 	}
-	// }
-
 	// добавляем сообщение
 	const addDialogMessage = () => {
-		props.dispatch({type: 'ADD-MESSAGE'})
+		props.dispatch(addMessageActionCreator())
 	}
 
 	// отслеживаем вводимые данные
 	const onChangeMessageText = () => {
 		let text = newMessageElementIDialogs.current.value
-		props.dispatch({type: 'UPDATE-DIALOG-MESSAGE-TEXT', newText: text})
+		props.dispatch(onChangeMessageTextActionCreator(text))
 	}
 
 	// чистим введенные данные
 	const clearMessageInDialog = () => {
-		props.dispatch({type: 'CLEAR-DIALOG-MESSAGE-TEXT'})
+		props.dispatch(clearMessageInDialogActionCreator())
 	}
 
 	return (
