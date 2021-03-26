@@ -4,7 +4,6 @@ const CLEAR_DIALOG_MESSAGE_TEXT = 'CLEAR-DIALOG-MESSAGE-TEXT'
 
 const dialogsReducer = (state, action) => {
 
-
 	switch (action.type) {
 		case ADD_MESSAGE:
 			if (state.newMessageText && state.newMessageText.replace(/\s/g, "")) {

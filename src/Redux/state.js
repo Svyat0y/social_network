@@ -96,25 +96,18 @@ const store = {
 		this._state.profilePage = profileReducer(this._state.profilePage, action)
 		this._state.messagesPage = dialogsReducer(this._state.messagesPage, action)
 
-
 		this._callSubscriber(this.getState())
-
-
 	}
 }
-
-
-
-
-
 
 window.store = store
 
 export default store;
 
 
-// ниже наш статический стейт, который мы искусственно создавали вначале
 
+
+// ниже наш статический стейт, который мы искусственно создавали вначале
 // заглушка по умолчанию, которая все равно переназначается внутри функции subscriber
 // let rerenderEntireTree = () => {
 // 	console.log('state changed')
