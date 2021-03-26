@@ -1,8 +1,6 @@
-const ADD_POST = 'ADD-POST'
-const ADD_MESSAGE = 'ADD-MESSAGE'
-const UPDATE_POST_MESSAGE_TEXT = 'UPDATE-POST-MESSAGE-TEXT'
-const UPDATE_DIALOG_MESSAGE_TEXT = 'UPDATE-DIALOG-MESSAGE-TEXT'
-const CLEAR_DIALOG_MESSAGE_TEXT = 'CLEAR-DIALOG-MESSAGE-TEXT'
+import profileReducer from "./profile-reducer";
+import dialogsReducer from "./dialogs-reducer";
+
 
 const store = {
 	_state: {
@@ -25,7 +23,7 @@ const store = {
 		profilePage: {
 			postData: [
 				{id: 0, message: 'Hi, how are you?', likeCount: 15},
-				{id: 1, message: "It's my first post", likeCount: 34},
+				{id: 1, message: "It's my first post", likeCount: 34}
 			],
 			newPostText: ""
 		},
@@ -95,57 +93,18 @@ const store = {
 	// 	}
 	// },
 	dispatch(action) {
-		if (action.type === 'ADD-POST') {
-			if (this._state.profilePage.newPostText && this._state.profilePage.newPostText.replace(/\s/g, "")) {
-				let newPost = {
-					id: 5,
-					message: this._state.profilePage.newPostText,
-					likeCount: 0,
-				}
-				this._state.profilePage.postData.push(newPost)
-				this._state.profilePage.newPostText = ""
-				this._callSubscriber(this._state)
-			} else {
-				return false
-			}
-		} else if (action.type === 'UPDATE-POST-MESSAGE-TEXT') {
-			this._state.profilePage.newPostText = action.newText
-			this._callSubscriber(this._state)
-		} else if (action.type === 'ADD-MESSAGE') {
-			if (this._state.messagesPage.newMessageText && this._state.messagesPage.newMessageText.replace(/\s/g, "")) {
-				let newDialogMessage = {
-					id: 3,
-					message: this._state.messagesPage.newMessageText
-				}
-				this._state.messagesPage.messagesData.push(newDialogMessage)
-				this._state.messagesPage.newMessageText = ""
-				this._callSubscriber(this._state)
-			} else {
-				return false
-			}
-		} else if (action.type === 'UPDATE-DIALOG-MESSAGE-TEXT') {
-			this._state.messagesPage.newMessageText = action.newText
-			this._callSubscriber(this._state)
-		} else if (action.type === 'CLEAR-DIALOG-MESSAGE-TEXT') {
-			if (this._state.messagesPage.newMessageText) {
-				this._state.messagesPage.newMessageText = ""
-				this._callSubscriber(this._state)
-			} else {
-				return false
-			}
-		}
+		this._state.profilePage = profileReducer(this._state.profilePage, action)
+		this._state.messagesPage = dialogsReducer(this._state.messagesPage, action)
+
+
+		this._callSubscriber(this.getState())
+
+
 	}
 }
 
-export const addPostActionCreator = () => ({type: ADD_POST})
 
-export const addMessageActionCreator = () => ({type: ADD_MESSAGE})
 
-export const onChangePostTextActionCreator = (text) => ({type: UPDATE_POST_MESSAGE_TEXT, newText: text})
-
-export const onChangeMessageTextActionCreator = (text) => ({type: UPDATE_DIALOG_MESSAGE_TEXT, newText: text})
-
-export const clearMessageInDialogActionCreator = () => ({type: CLEAR_DIALOG_MESSAGE_TEXT})
 
 
 

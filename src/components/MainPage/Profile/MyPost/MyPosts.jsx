@@ -1,21 +1,19 @@
 import React from 'react';
 import classes from './MyPosts.module.css';
 import MyPost from "./Post/MyPost";
-import {addPostActionCreator, onChangePostTextActionCreator} from "../../../../Redux/state";
+import {addPostActionCreator, onChangePostTextActionCreator} from "../../../../Redux/profile-reducer";
 
 const MyPosts = (props) => {
 
 	const posts = props.postData.map(p => <MyPost likeCount={p.likeCount} message={p.message} key={p.id}/>)
-
-	const newPostElement = React.createRef()
 
 	// вызываем функцию onClick, считываем данные с textarea и добавляем введенный пост
 	const addPost = () => {
 		props.dispatch(addPostActionCreator())
 	}
 
-	const onChangePostText = () => {
-		let text = newPostElement.current.value
+	const onChangePostText = (e) => {
+		let text = e.target.value
 		props.dispatch(onChangePostTextActionCreator(text))
 	}
 
@@ -25,7 +23,6 @@ const MyPosts = (props) => {
 			<form>
 				<textarea
 					onChange={onChangePostText}
-					ref={newPostElement}
 					value={props.newPostText}
 					placeholder='write a message'
 					name="post"
