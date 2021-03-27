@@ -26,16 +26,15 @@ const MyMessages = (props) => {
 	}
 
 	return (
-		<div className={classes.main_wrapper}>
-			<div className={classes.wrapper}>
-				<div className={classes.dialog_items}>
-					{dialogs}
+		<div className={classes.wrapper}>
+			<div className={classes.dialog_items}>
+				{dialogs}
+			</div>
+			<div className={classes.dialog_messages}>
+				<div className={classes.dialogMessagesItem_wr}>
+					{messages}
 				</div>
-				<div className={classes.dialog_messages}>
-					<div className={classes.dialogMessagesItem_wr}>
-						{messages}
-					</div>
-					<form>
+				<form>
 						<textarea
 							onChange={onChangeMessageText}
 							value={props.stateMessagesPage.newMessageText}
@@ -43,22 +42,21 @@ const MyMessages = (props) => {
 							name="text"
 							autoFocus={true}
 						/>
-						<div className={classes.btnMessages}>
-							<button
-								onClick={addDialogMessage}
-								type="button"
-							>
-								Add message
-							</button>
-							<button
-								onClick={clearMessageInDialog}
-								type="button"
-							>
-								Clear message
-							</button>
-						</div>
-					</form>
-				</div>
+					<div className={classes.btnMessages}>
+						<button
+							onClick={addDialogMessage}
+							type="button"
+						>
+							Add message
+						</button>
+						<button
+							onClick={clearMessageInDialog}
+							type="button"
+						>
+							Clear message
+						</button>
+					</div>
+				</form>
 			</div>
 		</div>
 	);
