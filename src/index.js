@@ -1,5 +1,5 @@
 // import state, {subscriber} from "./Redux/state";
-import store from './Redux/state'
+import store from './Redux/redux-store'
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -30,6 +30,9 @@ const rerenderEntireTree = (state) => {
 rerenderEntireTree(store.getState())
 
 // передаём в качестве аргумента нашу функцию отрисовки приложения
-store.subscribe(rerenderEntireTree)
+store.subscribe(() => {
+	let state = store.getState()
+	rerenderEntireTree(state)
+})
 
 reportWebVitals();
