@@ -1,4 +1,3 @@
-// import state, {subscriber} from "./Redux/state";
 import store from './Redux/redux-store'
 import React from 'react';
 import ReactDOM from 'react-dom';
