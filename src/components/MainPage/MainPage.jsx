@@ -8,23 +8,17 @@ import MySettings from './MySettings/MySettings';
 import {Route} from "react-router-dom";
 
 const MainPage = (props) => {
-
     return (
         <div className={classes.mainPage}>
             <Route exact path='/' render={() =>
                 <Profile
-                    stateProfilePage={props.state.profilePage}
+                    store={props.store}
                     dispatch={props.dispatch}
-                    // addPost={props.addPost}
-                    // updatePostMessageText={props.updatePostMessageText}
                 />}/>
             <Route path='/myMessages' render={() =>
                 <MyMessages
-                    stateMessagesPage={props.state.messagesPage}
+                    store={props.store}
                     dispatch={props.dispatch}
-                    // addDialogMessage={props.addDialogMessage}
-                    // updateDialogMessageText={props.updateDialogMessageText}
-                    // clearDialogMessageText={props.clearDialogMessageText}
                 />}/>
             <Route path='/myMusic' render={Music}/>
             <Route path='/notifications' render={Notifications}/>

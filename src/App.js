@@ -12,13 +12,8 @@ const App = (props) => {
         <main className="main">
           <Aside sideBar={props.state.sideBar}/>
           <MainPage
-              state={props.state}
+              store={props.store}
               dispatch={props.dispatch}
-              // addPost={props.addPost}
-              // addDialogMessage={props.addMessage}
-              // updatePostMessageText={props.updatePostMessageText}
-              // updateDialogMessageText={props.updateDialogMessageText}
-              // clearDialogMessageText={props.clearDialogMessageText}
           />
         </main>
         <Footer/>

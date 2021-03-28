@@ -5,7 +5,9 @@ import {addPostActionCreator, onChangePostTextActionCreator} from "../../../../R
 
 const MyPosts = (props) => {
 
-	const posts = props.postData.map(p => <MyPost likeCount={p.likeCount} message={p.message} key={p.id}/>)
+	let state = props.store.getState().profilePage
+
+	const posts = state.postData.map(p => <MyPost likeCount={p.likeCount} message={p.message} key={p.id}/>)
 
 	// вызываем функцию onClick, считываем данные с textarea и добавляем введенный пост
 	const addPost = () => {
@@ -23,7 +25,7 @@ const MyPosts = (props) => {
 			<form>
 				<textarea
 					onChange={onChangePostText}
-					value={props.newPostText}
+					value={state.newPostText}
 					placeholder='write a message'
 					name="post"
 					autoFocus={true}

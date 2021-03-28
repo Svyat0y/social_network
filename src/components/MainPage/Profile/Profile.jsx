@@ -8,11 +8,8 @@ const Profile = (props) => {
         <div className={classes.wrapper}>
             <MyPageHeader />
             <MyPosts
-                postData={props.stateProfilePage.postData}
+                store={props.store}
                 dispatch={props.dispatch}
-                newPostText={props.stateProfilePage.newPostText}
-                // addPost={props.addPost}
-                // updatePostMessageText={props.updatePostMessageText}
             />
         </div>
     );
