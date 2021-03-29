@@ -1,9 +1,10 @@
 import React from 'react';
 import classes from './MyPosts.module.css';
 import MyPost from "./Post/MyPost";
+
 const MyPosts = (props) => {
 
-	const posts = props.state.postData.map(p => <MyPost likeCount={p.likeCount} message={p.message} key={p.id}/>)
+	const posts = props.stateProfilePage.postData.map(p => <MyPost likeCount={p.likeCount} message={p.message} key={p.id}/>)
 
 	// вызываем функцию onClick, считываем данные с textarea и добавляем введенный пост
 	const addPost = () => {
@@ -21,7 +22,7 @@ const MyPosts = (props) => {
 			<form>
 				<textarea
 					onChange={onChangePostText}
-					value={props.state.newPostText}
+					value={props.stateProfilePage.newPostText}
 					placeholder='write a message'
 					name="post"
 					autoFocus={true}

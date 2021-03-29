@@ -1,33 +1,28 @@
 import React from 'react';
 import {addMessageActionCreator, clearMessageInDialogActionCreator, onChangeMessageTextActionCreator} from "../../../Redux/dialogs-reducer";
 import MyMessages from "./MyMessages";
+import {connect} from "react-redux";
 
-const MyMessagesContainer = (props) => {
-
-	let state = props.store.getState().messagesPage
-
-	// добавляем сообщение
-	const addDialogMessage = () => {
-		props.dispatch(addMessageActionCreator())
+const mapStateToProps = (state) => {
+	return {
+		stateMessagesPage: state.messagesPage
 	}
-
-	// отслеживаем вводимые данные
-	const onChangeMessageText = (text) => {
-		props.dispatch(onChangeMessageTextActionCreator(text))
-	}
-
-	// чистим введенные данные
-	const clearMessageInDialog = () => {
-		props.dispatch(clearMessageInDialogActionCreator())
-	}
-
-	return (
-		<MyMessages
-			addDialogMessage={addDialogMessage}
-			onChangeMessageText={onChangeMessageText}
-			clearMessageInDialog={clearMessageInDialog}
-			state={state}/>
-	)
 }
+
+const mapDispatchToProps = (dispatch) => {
+	return {
+		addDialogMessage: () => {
+			dispatch(addMessageActionCreator())
+		},
+		onChangeMessageText: (text) => {
+			dispatch(onChangeMessageTextActionCreator(text))
+		},
+		clearMessageInDialog: () => {
+			dispatch(clearMessageInDialogActionCreator())
+		}
+	}
+}
+
+const MyMessagesContainer = connect(mapStateToProps, mapDispatchToProps)(MyMessages)
 
 export default MyMessagesContainer;

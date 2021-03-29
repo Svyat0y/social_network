@@ -1,22 +1,27 @@
 import React from 'react';
 import {addPostActionCreator, onChangePostTextActionCreator} from "../../../../Redux/profile-reducer";
 import MyPosts from "./MyPosts";
+import {connect} from "react-redux";
 
-const MyPostsContainer = (props) => {
-
-	let state = props.store.getState().profilePage
-
-	// вызываем функцию onClick, считываем данные с textarea и добавляем введенный пост
-	const addPost = () => {
-		props.dispatch(addPostActionCreator())
+const mapStateToProps = (state) => {
+	return {
+		stateProfilePage: state.profilePage
 	}
-
-	const onChangePostText = (text) => {
-		props.dispatch(onChangePostTextActionCreator(text))
-	}
-
-
-	return <MyPosts onChangePostText={onChangePostText} addPost={addPost} state={state}/>
 }
+
+const mapDispatchToProps = (dispatch) => {
+	return {
+		addPost: () => {
+			dispatch(addPostActionCreator())
+		},
+		onChangePostText: (text) => {
+			dispatch(onChangePostTextActionCreator(text))
+		}
+	}
+}
+
+
+const MyPostsContainer = connect(mapStateToProps, mapDispatchToProps)(MyPosts)
+
 
 export default MyPostsContainer
