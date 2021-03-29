@@ -1,11 +1,11 @@
 import React from 'react';
 import classes from './MainPage.module.css';
 import Profile from './Profile/Profile';
-import MyMessages from './MyMessages/MyMessages';
 import Music from "./Music/Music";
 import Notifications from './Notifications/Notifications';
 import MySettings from './MySettings/MySettings';
 import {Route} from "react-router-dom";
+import MyMessagesContainer from "./MyMessages/MyMessagesContainer";
 
 const MainPage = (props) => {
     return (
@@ -16,7 +16,7 @@ const MainPage = (props) => {
                     dispatch={props.dispatch}
                 />}/>
             <Route path='/myMessages' render={() =>
-                <MyMessages
+                <MyMessagesContainer
                     store={props.store}
                     dispatch={props.dispatch}
                 />}/>

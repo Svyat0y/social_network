@@ -2,29 +2,25 @@ import React from 'react';
 import classes from './MyMessages.module.css';
 import MessageItem from "./MessageItem/MessageItem";
 import DialogItem from "./DialogItem/DialogItem";
-import {addMessageActionCreator, clearMessageInDialogActionCreator, onChangeMessageTextActionCreator} from "../../../Redux/dialogs-reducer";
-
 const MyMessages = (props) => {
 
-	let state = props.store.getState().messagesPage
-
-	let dialogs = state.dialogsData.map(dialog => <DialogItem name={dialog.name} key={dialog.id}/>)
-	let messages = state.messagesData.map(message => <MessageItem message={message.message} key={message.id}/>)
+	let dialogs = props.state.dialogsData.map(dialog => <DialogItem name={dialog.name} key={dialog.id}/>)
+	let messages = props.state.messagesData.map(message => <MessageItem message={message.message} key={message.id}/>)
 
 	// добавляем сообщение
 	const addDialogMessage = () => {
-		props.dispatch(addMessageActionCreator())
+		props.addDialogMessage()
 	}
 
 	// отслеживаем вводимые данные
 	const onChangeMessageText = (e) => {
 		let text = e.target.value
-		props.dispatch(onChangeMessageTextActionCreator(text))
+		props.onChangeMessageText(text)
 	}
 
 	// чистим введенные данные
 	const clearMessageInDialog = () => {
-		props.dispatch(clearMessageInDialogActionCreator())
+		props.clearMessageInDialog()
 	}
 
 	return (
@@ -39,7 +35,7 @@ const MyMessages = (props) => {
 				<form>
 						<textarea
 							onChange={onChangeMessageText}
-							value={state.newMessageText}
+							value={props.state.newMessageText}
 							placeholder='write a message'
 							name="text"
 							autoFocus={true}
