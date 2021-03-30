@@ -10,8 +10,8 @@ import MyMessagesContainer from "./MyMessages/MyMessagesContainer";
 const MainPage = () => {
     return (
         <div className={classes.mainPage}>
-            <Route exact path='/' render={() => <Profile />}/>
-            <Route path='/myMessages' render={() => <MyMessagesContainer />}/>
+            <Route exact path='/' render={Profile}/>
+            <Route path='/myMessages' render={()=> <MyMessagesContainer />}/>
             <Route path='/myMusic' render={Music}/>
             <Route path='/notifications' render={Notifications}/>
             <Route path='/mySettings' render={MySettings}/>

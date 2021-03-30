@@ -3,7 +3,6 @@ import {NavLink} from 'react-router-dom';
 import classes from './Aside.module.css';
 import AvatarsContainer from "./Avatars/AvatarsContainer";
 
-
 const Aside = () => {
 	return (
 		<aside className={classes.aside}>
