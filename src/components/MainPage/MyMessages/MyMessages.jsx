@@ -2,6 +2,7 @@ import React from 'react';
 import classes from './MyMessages.module.css';
 import MessageItem from "./MessageItem/MessageItem";
 import DialogItem from "./DialogItem/DialogItem";
+
 const MyMessages = (props) => {
 
 	let dialogs = props.stateMessagesPage.dialogsData.map(dialog => <DialogItem name={dialog.name} key={dialog.id}/>)

@@ -7,19 +7,11 @@ import MySettings from './MySettings/MySettings';
 import {Route} from "react-router-dom";
 import MyMessagesContainer from "./MyMessages/MyMessagesContainer";
 
-const MainPage = (props) => {
+const MainPage = () => {
     return (
         <div className={classes.mainPage}>
-            <Route exact path='/' render={() =>
-                <Profile
-                    store={props.store}
-                    dispatch={props.dispatch}
-                />}/>
-            <Route path='/myMessages' render={() =>
-                <MyMessagesContainer
-                    store={props.store}
-                    dispatch={props.dispatch}
-                />}/>
+            <Route exact path='/' render={() => <Profile />}/>
+            <Route path='/myMessages' render={() => <MyMessagesContainer />}/>
             <Route path='/myMusic' render={Music}/>
             <Route path='/notifications' render={Notifications}/>
             <Route path='/mySettings' render={MySettings}/>

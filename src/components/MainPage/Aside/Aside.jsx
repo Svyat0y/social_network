@@ -1,10 +1,10 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 import classes from './Aside.module.css';
-import Avatars from "./Avatars/Avatars";
+import AvatarsContainer from "./Avatars/AvatarsContainer";
 
 
-const Aside = (props) => {
+const Aside = () => {
 	return (
 		<aside className={classes.aside}>
 			<div className={classes.nav_wrapper}>
@@ -15,7 +15,7 @@ const Aside = (props) => {
 					<li><NavLink to='/notifications' activeClassName={classes.active}>My notifications</NavLink></li>
 					<li><NavLink to='/mySettings' activeClassName={classes.active}>My settings</NavLink></li>
 				</ul>
-				<Avatars stateAvatarsData={props.sideBar.avatarsData}/>
+				<AvatarsContainer />
 			</div>
 		</aside>
 	);

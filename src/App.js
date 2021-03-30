@@ -5,16 +5,13 @@ import Aside from './components/MainPage/Aside/Aside';
 import Footer from './components/Footer/Footer';
 import MainPage from './components/MainPage/MainPage';
 
-const App = (props) => {
+const App = () => {
   return (
       <div className="App-wrapper">
         <Header/>
         <main className="main">
-          <Aside sideBar={props.state.sideBar}/>
-          <MainPage
-              store={props.store}
-              dispatch={props.dispatch}
-          />
+          <Aside />
+          <MainPage />
         </main>
         <Footer/>
       </div>

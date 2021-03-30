@@ -3,7 +3,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom";
 import {Provider} from "react-redux";
 
@@ -13,9 +12,9 @@ const rerenderEntireTree = (state) => {
 			<React.StrictMode>
 				<Provider store={store}>
 					<App
-						state={state}
-						dispatch={store.dispatch}
-						store={store}
+						// state={state}
+						// dispatch={store.dispatch}
+						// store={store}
 					/>
 				</Provider>
 			</React.StrictMode>
@@ -25,12 +24,9 @@ const rerenderEntireTree = (state) => {
 }
 
 // отрисовка всего приложения
-rerenderEntireTree(store.getState())
+rerenderEntireTree()
 
 // передаём в качестве аргумента нашу функцию отрисовки приложения
 store.subscribe(() => {
-	let state = store.getState()
-	rerenderEntireTree(state)
+	rerenderEntireTree()
 })
-
-reportWebVitals();
