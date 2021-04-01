@@ -19,7 +19,3 @@ const DialogItem = (props) => {
 }
 
 export default DialogItem;
-
-// 			<li className={classes.dialog}>
-// 				<NavLink to={'/myMessages/' + props.id}>{props.name}</NavLink>
-// 			</li>

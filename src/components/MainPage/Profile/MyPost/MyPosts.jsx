@@ -4,7 +4,7 @@ import MyPost from "./Post/MyPost";
 
 const MyPosts = (props) => {
 
-	const posts = props.stateProfilePage.postData.map(p => <MyPost likeCount={p.likeCount} message={p.message} key={p.id}/>)
+	const posts = props.stateProfilePage.postData.map(p => <MyPost likeCount={p.likeCount} message={p.message} key={p.id} id={p.id}/>)
 
 	// вызываем функцию onClick, считываем данные с textarea и добавляем введенный пост
 	const addPost = () => {
