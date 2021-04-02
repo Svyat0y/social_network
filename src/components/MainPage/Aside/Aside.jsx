@@ -12,6 +12,7 @@ const Aside = () => {
 					<li><NavLink to='/myMessages' activeClassName={classes.active}>My messages</NavLink></li>
 					<li><NavLink to='/myMusic' activeClassName={classes.active}>My Music</NavLink></li>
 					<li><NavLink to='/notifications' activeClassName={classes.active}>My notifications</NavLink></li>
+					<li><NavLink to='/findUsers' activeClassName={classes.active}>Find Users</NavLink></li>
 					<li><NavLink to='/mySettings' activeClassName={classes.active}>My settings</NavLink></li>
 				</ul>
 				<AvatarsContainer />

@@ -4,7 +4,7 @@ import AvatarItem from "./AvatarItem/AvatarItem";
 
 const Avatars = (props) => {
 
-	let avatars = props.stateAvatarsData.map(avatar => <AvatarItem userName={avatar.userName} key={avatar.id}/>)
+	let avatars = props.stateAvatarsData.map(avatar => <AvatarItem userImg={avatar.userImg} userName={avatar.userName} key={avatar.id}/>)
 
 	return (
 		<div className={classes.avatar_wrapper}>

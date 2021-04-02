@@ -1,16 +1,15 @@
 import React from "react";
-import classes from "./../MyMessages.module.css";
+import style from "./../MyMessages.module.css";
 import {NavLink} from "react-router-dom";
-import userAvatar from "../../../../img/user_avatar.svg";
 
 const DialogItem = (props) => {
 	return (
 		<NavLink to={'/myMessages/' + props.id}>
-			<div className={classes.dialogItem_wrapper}>
-				<div className={classes.user_img_wr}>
-					<img src={userAvatar} alt="avatar"/>
+			<div className={style.dialogItem_wrapper}>
+				<div className={style.user_img_wr}>
+					<img src={props.userImg} alt="avatar"/>
 				</div>
-				<li className={classes.dialog}>
+				<li className={style.dialog}>
 					{props.name}
 				</li>
 			</div>

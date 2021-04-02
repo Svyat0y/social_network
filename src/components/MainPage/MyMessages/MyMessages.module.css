@@ -13,7 +13,7 @@
     align-items: center;
     width: 100%;
     padding: 10px;
-    transition: all .2s ease;
+    transition: all .1s ease;
 }
 
 .dialog_items {
@@ -82,10 +82,13 @@
     border-radius: 5px;
     overflow-x: hidden;
     background: transparent;
-    transition: all .2s ease;
+    transition: all .1s ease;
 }
 .dialog_messages button:hover {
     background: rgba(129,218,251, 0.8);
+}
+.dialog_messages button:active {
+    transform: scale(0.99);
 }
 .btnMessages {
     display: flex;

@@ -1,12 +1,12 @@
-import React from 'react';
-import classes from './MyPosts.module.css';
-import MyPost from "./Post/MyPost";
+import React from 'react'
+import style from './MyPosts.module.css'
+import MyPost from "./Post/MyPost"
 
 const MyPosts = (props) => {
 
-	const posts = props.stateProfilePage.postData.map(p => <MyPost likeCount={p.likeCount} message={p.message} key={p.id} id={p.id}/>)
+	const posts = props.stateProfilePage.postData.map(p => <MyPost userImg={p.userImg} name={p.name} likeCount={p.likeCount}
+																   message={p.message} key={p.id} id={p.id}/>)
 
-	// вызываем функцию onClick, считываем данные с textarea и добавляем введенный пост
 	const addPost = () => {
 		props.addPost()
 	}
@@ -17,7 +17,7 @@ const MyPosts = (props) => {
 	}
 
 	return (
-		<div className={classes.myPost_main_wr}>
+		<div className={style.myPost_main_wr}>
 			<span>My Post</span>
 			<form>
 				<textarea
