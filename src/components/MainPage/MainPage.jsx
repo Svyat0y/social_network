@@ -18,7 +18,7 @@ const MainPage = () => {
             <Route path='/findUsers' render={() => <UsersContainer />}/>
             <Route path='/mySettings' render={() => <MySettings />}/>
         </div>
-    );
+    )
 }
 
 export default MainPage;

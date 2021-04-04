@@ -1,21 +1,29 @@
-const ADD_MESSAGE = 'ADD-MESSAGE'
-const UPDATE_DIALOG_MESSAGE_TEXT = 'UPDATE-DIALOG-MESSAGE-TEXT'
-const CLEAR_DIALOG_MESSAGE_TEXT = 'CLEAR-DIALOG-MESSAGE-TEXT'
+const ADD_MESSAGE = 'ADD-MESSAGE';
+const UPDATE_DIALOG_MESSAGE_TEXT = 'UPDATE-DIALOG-MESSAGE-TEXT';
+const CLEAR_DIALOG_MESSAGE_TEXT = 'CLEAR-DIALOG-MESSAGE-TEXT';
 
 let initialState = {
 	dialogsData: [
-		{id: 1,
+		{
+			id: 1,
 			userImg: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6b7WENFquctsWy8WgMSHmFJbVyJXf0lQ4R2XRAQcd2WgOK2IIfFlLUFcAcsdnpA8S_Wg&usqp=CAU',
-			name: 'Andy'},
-		{id: 2,
+			name: 'Andy'
+		},
+		{
+			id: 2,
 			userImg: 'https://meragor.com/files/styles//ava_800_800_wm/standoff_158.jpg',
-			name: 'Panda'},
-		{id: 3,
+			name: 'Panda'
+		},
+		{
+			id: 3,
 			userImg: 'https://i2.wp.com/andrey-eltsov.ru/wp-content/uploads/2017/09/DopNaAvu1.jpg',
-			name: 'Dasha'},
-		{id: 4,
+			name: 'Dasha'
+		},
+		{
+			id: 4,
 			userImg: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSag9tV0QvMc5HMbiwGKch0lAbSwE9v7i638w&usqp=CAU',
-			name: 'July'}
+			name: 'July'
+		}
 	],
 	messagesData: [
 		{id: 0, message: 'Hi'},
@@ -28,6 +36,7 @@ let initialState = {
 const dialogsReducer = (state = initialState, action) => {
 
 	switch (action.type) {
+
 		case ADD_MESSAGE:
 			if (state.newMessageText && state.newMessageText.replace(/\s/g, "")) {
 				return {
@@ -57,8 +66,9 @@ const dialogsReducer = (state = initialState, action) => {
 			return state
 	}
 }
-export default dialogsReducer
 
-export const addMessageActionCreator = () => ({type: ADD_MESSAGE})
-export const onChangeMessageTextActionCreator = (text) => ({type: UPDATE_DIALOG_MESSAGE_TEXT, newText: text})
-export const clearMessageInDialogActionCreator = () => ({type: CLEAR_DIALOG_MESSAGE_TEXT})
+export const addMessageActionCreator = () => ({type: ADD_MESSAGE});
+export const onChangeMessageTextActionCreator = (text) => ({type: UPDATE_DIALOG_MESSAGE_TEXT, newText: text});
+export const clearMessageInDialogActionCreator = () => ({type: CLEAR_DIALOG_MESSAGE_TEXT});
+
+export default dialogsReducer

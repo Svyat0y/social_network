@@ -1,7 +1,7 @@
-import React from 'react'
-import style from './MyMessages.module.css'
-import MessageItem from "./MessageItem/MessageItem"
-import DialogItem from "./DialogItem/DialogItem"
+import React from 'react';
+import style from './MyMessages.module.css';
+import MessageItem from "./MessageItem/MessageItem";
+import DialogItem from "./DialogItem/DialogItem";
 
 const MyMessages = (props) => {
 
@@ -58,4 +58,4 @@ const MyMessages = (props) => {
 	);
 }
 
-export default MyMessages
+export default MyMessages;
