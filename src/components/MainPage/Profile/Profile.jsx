@@ -1,11 +1,11 @@
 import React from 'react';
-import classes from './Profile.module.css';
+import style from './Profile.module.css';
 import MyPostsContainer from "./MyPost/MyPostsContainer";
 import MyPageHeader from "./MyPageHeader/MyPageHeader";
 
 const Profile = () => {
     return (
-        <div className={classes.wrapper}>
+        <div className={style.wrapper}>
             <MyPageHeader />
             <MyPostsContainer />
         </div>

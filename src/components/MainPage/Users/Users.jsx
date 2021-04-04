@@ -11,7 +11,8 @@ const Users = (props) => {
 						</div>
 						<div>
 							{u.followed
-								? <button onClick={() => props.onFollow(u.id)} className={`${style.btnFollowed} + ${style.btnFollow}`}>Unfollow</button>
+								? <button onClick={() => props.onFollow(u.id)}
+										  className={`${style.btnFollowed} + ${style.btnFollow}`}>Unfollow</button>
 								: <button onClick={() => props.unfollow(u.id)} className={style.btnFollowed}>Follow</button>}
 						</div>
 					</div>

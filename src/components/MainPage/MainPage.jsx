@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './MainPage.module.css';
+import style from './MainPage.module.css';
 import Profile from './Profile/Profile';
 import Music from "./Music/Music";
 import Notifications from './Notifications/Notifications';
@@ -10,7 +10,7 @@ import UsersContainer from "./Users/UsersContainer";
 
 const MainPage = () => {
     return (
-        <div className={classes.mainPage}>
+        <div className={style.mainPage}>
             <Route exact path='/' render={() => <Profile />}/>
             <Route path='/myMessages' render={()=> <MyMessagesContainer />}/>
             <Route path='/myMusic' render={() => <Music />}/>

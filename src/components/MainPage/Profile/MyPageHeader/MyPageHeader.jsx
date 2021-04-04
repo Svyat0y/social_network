@@ -1,9 +1,9 @@
 import React from 'react';
-import classes from './MyPageHeader.module.css';
+import style from './MyPageHeader.module.css';
 
 const MyPageHeader = () => {
     return (
-        <div className={classes.pageHeader_wrapper}>
+        <div className={style.pageHeader_wrapper}>
             Header page Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet consequuntur debitis dolorem
             doloremque eos, facilis laboriosam magni necessitatibus perferendis reiciendis similique, totam. Ab
             architecto asperiores consectetur, delectus ea exercitationem iste, laudantium obcaecati quas qui quibusdam

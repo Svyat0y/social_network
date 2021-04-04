@@ -1,13 +1,13 @@
 import React from 'react';
-import classes from "./AvatarItem.module.css";
+import style from "./AvatarItem.module.css";
 
 const AvatarItem = (props) => {
 	return (
-		<div className={classes.user_box}>
-			<div className={classes.user_img_wr}>
+		<div className={style.wrapper}>
+			<div className={style.user_img_wr}>
 				<img src={props.userImg} alt="avatar"/>
 			</div>
-			<div className={classes.user_name}>{props.userName}</div>
+			<div className={style.user_name}>{props.userName}</div>
 		</div>
 	);
 }
