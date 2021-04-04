@@ -1,3 +1,5 @@
+import dialogsReducer from "./dialogs-reducer";
+
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET_USERS';
@@ -10,7 +12,6 @@ const usersReducer = (state = initialState, action) => {
 
 	switch (action.type) {
 		case FOLLOW:
-
 			return {
 				...state,
 				users: state.users.map( u => {

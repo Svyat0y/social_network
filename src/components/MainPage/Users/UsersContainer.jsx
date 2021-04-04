@@ -8,7 +8,6 @@ const mapStateToProps = (state) => {
 		users: state.usersPage.users
 	}
 }
-
 const mapDispatchToProps = (dispatch) => {
 	return {
 		setUsers: (users) => {
@@ -22,7 +21,6 @@ const mapDispatchToProps = (dispatch) => {
 		}
 	}
 }
-
 const UsersContainer = connect(mapStateToProps, mapDispatchToProps)(Users);
 
 export default UsersContainer;

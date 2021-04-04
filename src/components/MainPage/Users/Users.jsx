@@ -4,6 +4,7 @@ import style from './Users.module.css';
 const Users = (props) => {
 
 	if (props.users.length === 0) {
+
 		props.setUsers([
 				{
 					id: 0,
@@ -40,7 +41,6 @@ const Users = (props) => {
 			]
 		)
 	}
-
 	return <div>
 		{
 			props.users.map(u => <div className={style.wrapper} key={u.id}>
@@ -66,5 +66,4 @@ const Users = (props) => {
 		}
 	</div>
 }
-
 export default Users;

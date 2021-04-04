@@ -9,16 +9,16 @@ import MyMessagesContainer from "./MyMessages/MyMessagesContainer";
 import UsersContainer from "./Users/UsersContainer";
 
 const MainPage = () => {
-    return (
-        <div className={style.mainPage}>
-            <Route exact path='/' render={() => <Profile />}/>
-            <Route path='/myMessages' render={()=> <MyMessagesContainer />}/>
-            <Route path='/myMusic' render={() => <Music />}/>
-            <Route path='/notifications' render={() => <Notifications />}/>
-            <Route path='/findUsers' render={() => <UsersContainer />}/>
-            <Route path='/mySettings' render={() => <MySettings />}/>
-        </div>
-    )
+	return (
+		<div className={style.mainPage}>
+			<Route exact path='/' render={() => <Profile/>}/>
+			<Route path='/myMessages' render={() => <MyMessagesContainer/>}/>
+			<Route path='/myMusic' render={() => <Music/>}/>
+			<Route path='/notifications' render={() => <Notifications/>}/>
+			<Route path='/findUsers' render={() => <UsersContainer/>}/>
+			<Route path='/mySettings' render={() => <MySettings/>}/>
+		</div>
+	)
 }
 
 export default MainPage;
