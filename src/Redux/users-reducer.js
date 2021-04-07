@@ -1,5 +1,5 @@
 const TOGGLE_FOLLOW = 'TOGGLE-FOLLOW';
-const UNFOLLOW = 'UNFOLLOW';
+// const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET_USERS';
 
 let initialState = {

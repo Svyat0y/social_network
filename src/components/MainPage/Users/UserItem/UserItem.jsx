@@ -18,9 +18,7 @@ const UserItem = (props) => {
 					{/*}*/}
 					<button onClick={() => props.toggleFollow(props.user.id)}
 							className={`${style.btnFollowed} ${props.user.followed ? style.btnUnFollow : ''}`}>
-						{props.user.followed
-							? 'Unfollow'
-							: 'Follow'}
+						{props.user.followed ? 'Unfollow' : 'Follow'}
 					</button>
 				</div>
 			</div>
