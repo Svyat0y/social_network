@@ -41,14 +41,11 @@ const Users = (props) => {
 		)
 	}
 
-	const onFollow = (userId) => {
-		props.onFollow(userId)
-	}
-	const onUnfollow = (userId) => {
-		props.unfollow(userId)
+	const toggleFollow = (userId) => {
+		props.toggleFollow(userId)
 	}
 
-	let users = props.users.map(user => <UserItem user={user} follow={onFollow}	unfollow={onUnfollow}/>)
+	let users = props.users.map(user => <UserItem user={user} toggleFollow={toggleFollow}/>)
 
 	return <div> {users} </div>
 }

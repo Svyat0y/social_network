@@ -13,11 +13,8 @@ const mapDispatchToProps = (dispatch) => {
 		setUsers: (users) => {
 			dispatch(setUsersAC(users))
 		},
-		onFollow: (userId) => {
+		toggleFollow: (userId) => {
 			dispatch(followAC(userId))
-		},
-		unfollow: (userId) => {
-			dispatch(unFollowAC(userId))
 		}
 	}
 }

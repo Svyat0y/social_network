@@ -16,7 +16,7 @@ const MyPosts = (props) => {
 	}
 
 	const posts = props.stateProfilePage.postData.map(p => <MyPost userImg={p.userImg} name={p.name} likeCount={p.likeCount}
-																   message={p.message} key={p.id} id={p.id}/>)
+																   message={p.message} key={p.id}/>)
 
 	const addPost = () => {
 		props.addPost()
