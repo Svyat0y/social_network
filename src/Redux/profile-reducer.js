@@ -1,15 +1,9 @@
 const ADD_POST = 'ADD-POST'
 const UPDATE_POST_MESSAGE_TEXT = 'UPDATE-POST-MESSAGE-TEXT'
+const SET_POST_DATA = 'SET-POST-DATA'
 
 let initialState = {
-	postData: [
-		{id: 0,
-			userImg: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6b7WENFquctsWy8WgMSHmFJbVyJXf0lQ4R2XRAQcd2WgOK2IIfFlLUFcAcsdnpA8S_Wg&usqp=CAU',
-			name: 'Andy', message: 'Hi, how are you?', likeCount: 15},
-		{id: 1,
-			userImg: 'https://meragor.com/files/styles//ava_800_800_wm/standoff_158.jpg',
-			name: 'Panda', message: "It's my first post", likeCount: 34}
-	],
+	postData: [],
 	newPostText: ""
 }
 
@@ -22,7 +16,7 @@ const profileReducer = (state = initialState, action) => {
 					...state,
 					postData: [...state.postData, {id:3,
 						userImg: 'https://www.meme-arsenal.com/memes/53336f6e6ad81d19f0d6196424f53e08.jpg',
-						name: 'Vasya', message: state.newPostText, likeCount: 0}],
+						name: 'Васюнь', message: state.newPostText, likeCount: 0}],
 					newPostText: ""
 				}
 			}
@@ -34,13 +28,20 @@ const profileReducer = (state = initialState, action) => {
 				newPostText: action.newText
 			}
 
+		case SET_POST_DATA:
+			return {
+				...state,
+				postData: [...state.postData, ...action.postDataItems]
+			}
+
 		default:
 			return state
 	}
 }
 
-export default profileReducer
+export const onChangePostTextAC = (text) => ({type: UPDATE_POST_MESSAGE_TEXT, newText: text})
+export const addPostAC = () => ({type: ADD_POST})
+export const setPostDataAC = (postDataItems) => ({type: SET_POST_DATA, postDataItems: postDataItems})
 
-export const onChangePostTextActionCreator = (text) => ({type: UPDATE_POST_MESSAGE_TEXT, newText: text})
-export const addPostActionCreator = () => ({type: ADD_POST})
+export default profileReducer
 

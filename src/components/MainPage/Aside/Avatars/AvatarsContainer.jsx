@@ -1,6 +1,7 @@
 import React from 'react';
 import Avatars from "./Avatars";
 import {connect} from "react-redux";
+import {setSideBarAC} from "../../../../Redux/side-bar-reducer";
 
 const mapStateToProps = (state) => {
 	return {
@@ -9,7 +10,11 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-	return {}
+	return {
+		setSideBarData: (avatars) => {
+			dispatch(setSideBarAC(avatars))
+		}
+	}
 }
 
 const AvatarsContainer = connect(mapStateToProps, mapDispatchToProps)(Avatars);

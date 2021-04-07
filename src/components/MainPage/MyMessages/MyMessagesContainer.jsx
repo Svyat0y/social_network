@@ -1,8 +1,8 @@
 import React from 'react';
 import {
-	addMessageActionCreator,
-	clearMessageInDialogActionCreator,
-	onChangeMessageTextActionCreator,
+	addMessageAC,
+	clearMessageInDialogAC,
+	onChangeMessageTextAC, setMessagesDataAC,
 } from "../../../Redux/dialogs-reducer";
 import MyMessages from "./MyMessages";
 import {connect} from "react-redux";
@@ -15,14 +15,17 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
 	return {
+		setMessagesData: (messagesPageData) => {
+			dispatch(setMessagesDataAC(messagesPageData))
+		},
 		addDialogMessage: () => {
-			dispatch(addMessageActionCreator())
+			dispatch(addMessageAC())
 		},
 		onChangeMessageText: (text) => {
-			dispatch(onChangeMessageTextActionCreator(text))
+			dispatch(onChangeMessageTextAC(text))
 		},
 		clearMessageInDialog: () => {
-			dispatch(clearMessageInDialogActionCreator())
+			dispatch(clearMessageInDialogAC())
 		}
 	}
 }

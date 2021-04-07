@@ -24,7 +24,7 @@
 .btnFollowed:active {
     background: rgba(129,218,251, 0.8);
 }
-.btnFollow {
+.btnUnFollow {
     background: rgba(129,218,251, 0.8);
 }
 
