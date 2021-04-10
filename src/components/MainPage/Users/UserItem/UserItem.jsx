@@ -6,7 +6,7 @@ const UserItem = (props) => {
 		<div className={style.wrapper}>
 			<div className={style.box_wrapper}>
 				<div className={style.img_wrapper}>
-					<img src={props.user.userImg} alt="avatar"/>
+					<img src={props.user.photos.small} alt="avatar"/>
 				</div>
 				<div>
 					{/*{*/}
@@ -23,9 +23,9 @@ const UserItem = (props) => {
 				</div>
 			</div>
 			<div>
-				<span className={style.span_wrapper}><span className={style.spanName}>name:</span> {props.user.fullName}</span>
-				<span className={style.span_wrapper}><span className={style.spanName}>country:</span> {props.user.location.country}</span>
-				<span className={style.span_wrapper}><span className={style.spanName}>city:</span> {props.user.location.city}</span>
+				<span className={style.span_wrapper}><span className={style.spanName}>name:</span> {props.user.name}</span>
+				<span className={style.span_wrapper}><span className={style.spanName}>country:</span> user.location.country</span>
+				<span className={style.span_wrapper}><span className={style.spanName}>city:</span> user.location.city</span>
 				<span className={style.span_wrapper}><span className={style.spanName}>status:</span> {props.user.status}</span>
 			</div>
 		</div>

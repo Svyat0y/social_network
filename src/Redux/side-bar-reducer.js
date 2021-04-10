@@ -5,6 +5,7 @@ let initialState = {
 }
 
 const sideBarReducer = (state = initialState, action) => {
+
 	switch (action.type) {
 		case SET_SIDEBAR_DATA:
 			return {

@@ -1,7 +1,7 @@
 const ADD_MESSAGE = 'ADD-MESSAGE';
 const UPDATE_DIALOG_MESSAGE_TEXT = 'UPDATE-DIALOG-MESSAGE-TEXT';
 const CLEAR_DIALOG_MESSAGE_TEXT = 'CLEAR-DIALOG-MESSAGE-TEXT';
-const SET_MESSAGES_DATA = 'SET-MESSAGES-DATA';
+const SET_MESSAGES_PAGE_DATA = 'SET-MESSAGES-PAGE-DATA';
 
 let initialState = {
 	dialogsData: [],
@@ -28,7 +28,7 @@ const dialogsReducer = (state = initialState, action) => {
 				newMessageText: action.newText
 			}
 
-		case SET_MESSAGES_DATA:
+		case SET_MESSAGES_PAGE_DATA:
 			return {
 				...state,
 				dialogsData: [...state.dialogsData, ...action.messagesPageData.dialogsData],
@@ -52,6 +52,6 @@ const dialogsReducer = (state = initialState, action) => {
 export const addMessageAC = () => ({type: ADD_MESSAGE});
 export const onChangeMessageTextAC = (text) => ({type: UPDATE_DIALOG_MESSAGE_TEXT, newText: text});
 export const clearMessageInDialogAC = () => ({type: CLEAR_DIALOG_MESSAGE_TEXT});
-export const setMessagesDataAC = (messagesPageData) => ({type: SET_MESSAGES_DATA, messagesPageData: messagesPageData})
+export const setMessagesDataAC = (messagesPageData) => ({type: SET_MESSAGES_PAGE_DATA, messagesPageData: messagesPageData})
 
 export default dialogsReducer;
