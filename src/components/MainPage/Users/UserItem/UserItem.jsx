@@ -9,13 +9,6 @@ const UserItem = (props) => {
 					<img src={props.user.photos.small} alt="avatar"/>
 				</div>
 				<div>
-					{/*{*/}
-					{/*	props.user.followed*/}
-					{/*	? <button onClick={() => props.toggleFollow(props.user.id)}*/}
-					{/*			  className={`${style.btnFollowed} ${style.btnUnFollow}`}>Unfollow</button>*/}
-					{/*	: <button onClick={() => props.toggleFollow(props.user.id)}*/}
-					{/*			  className={style.btnFollowed}>Follow</button>*/}
-					{/*}*/}
 					<button onClick={() => props.toggleFollow(props.user.id)}
 							className={`${style.btnFollowed} ${props.user.followed ? style.btnUnFollow : ''}`}>
 						{props.user.followed ? 'Unfollow' : 'Follow'}

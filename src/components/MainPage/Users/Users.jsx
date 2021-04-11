@@ -1,5 +1,6 @@
 import React from 'react';
 import UserItem from "./UserItem/UserItem";
+import style from './Users.module.css'
 import * as axios from 'axios'
 
 // {
@@ -28,17 +29,61 @@ import * as axios from 'axios'
 class Users extends React.Component {
 
 	componentDidMount() {
-		axios.get('https://social-network.samuraijs.com/api/1.0/users?page=1&count=5')
-			.then(response => this.props.setUsers(response.data.items))
+		this.startFetchingAnimation()
+		axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
+			.then(response => {
+				this.props.setUsers(response.data.items)
+				this.props.setTotalCount(response.data.totalCount)
+			})
+	}
+	onPageNumber = (currentPage) => {
+		this.props.setCurrentPage(currentPage)
+		axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${currentPage}&count=${this.props.pageSize}`)
+			.then(response => {
+				this.props.setUsers(response.data.items)
+			})
+	}
+	startFetchingAnimation = () => {
+		this.props.onIsFetching(true)
 	}
 
 	render() {
 
 		const toggleFollow = userId => this.props.toggleFollow(userId)
 
+		let pages = []
+		let pagesCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize)
+		for (let i = 1; i <= pagesCount; i++) {
+			pages.push(i)
+		}
+
 		let users = this.props.users.map(user => <UserItem user={user} toggleFollow={toggleFollow} key={user.id}/>)
 
-		return <div> {users} </div>
+		return (
+			<div>
+				<div>
+					{pages.map((p, index) => <span
+						key={index}
+						className={`${style.pg_number} ${this.props.currentPage === p && style.pg_number_active}`}
+						onClick={() => {
+							this.onPageNumber(p)
+							this.startFetchingAnimation()
+						}}>{p}</span>)}
+				</div>
+
+				<div>
+					{
+						this.props.isFetchingAnimation === false
+							?
+							users
+							:
+							<div className={style.fetching}>
+
+							</div>
+					}
+				</div>
+			</div>
+		)
 	}
 }
 
