@@ -11,19 +11,40 @@ import * as axios from 'axios'
 // 	location: {country: 'Ukraine', city: 'Kiev'}
 // }
 
-const Users = (props) => {
+// const Users = (props) => {
+//
+// 	if (props.users.length === 0) {
+// 		axios.get('https://social-network.samuraijs.com/api/1.0/users?page=1&count=5')
+// 			.then(response => props.setUsers(response.data.items))
+// 	}
+//
+// 	const toggleFollow = (userId) => {
+// 		props.toggleFollow(userId)
+// 	}
+//
+// 	let users = props.users.map(user => <UserItem user={user} toggleFollow={toggleFollow} key={user.id}/>)
+//
+// 	return <div> {users} </div>
+// }
+// export default Users;
 
-	if (props.users.length === 0) {
+class Users extends React.Component  {
+
+	constructor(props) {
+		super(props);
+
 		axios.get('https://social-network.samuraijs.com/api/1.0/users?page=1&count=5')
-			.then(response => props.setUsers(response.data.items))
+			.then(response => this.props.setUsers(response.data.items))
 	}
 
-	const toggleFollow = (userId) => {
-		props.toggleFollow(userId)
+	render() {
+
+		const toggleFollow = userId => this.props.toggleFollow(userId)
+
+		let users = this.props.users.map(user => <UserItem user={user} toggleFollow={toggleFollow} key={user.id}/>)
+
+		return <div> {users} </div>
 	}
-
-	let users = props.users.map(user => <UserItem user={user} toggleFollow={toggleFollow} key={user.id}/>)
-
-	return <div> {users} </div>
 }
-export default Users;
+
+export default Users
