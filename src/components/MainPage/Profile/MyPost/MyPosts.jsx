@@ -1,6 +1,6 @@
 import React from 'react'
 import style from './MyPosts.module.css'
-import MyPost from "./Post/MyPost"
+import MyPost from "./MyPost"
 
 const MyPosts = (props) => {
 
@@ -28,7 +28,7 @@ const MyPosts = (props) => {
 	}
 
 	return (
-		<div className={style.myPost_main_wr}>
+		<div className={style.main_wr}>
 			<span>My Post</span>
 			<form>
 				<textarea

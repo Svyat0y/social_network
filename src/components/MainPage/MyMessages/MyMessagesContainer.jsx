@@ -30,6 +30,4 @@ const mapDispatchToProps = (dispatch) => {
 	}
 }
 
-const MyMessagesContainer = connect(mapStateToProps, mapDispatchToProps)(MyMessages)
-
-export default MyMessagesContainer
+export default connect(mapStateToProps, mapDispatchToProps)(MyMessages)

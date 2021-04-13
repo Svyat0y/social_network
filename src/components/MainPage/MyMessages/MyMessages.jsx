@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './MyMessages.module.css';
-import MessageItem from "./MessageItem/MessageItem";
-import DialogItem from "./DialogItem/DialogItem";
+import MessageItem from "./MessageItem";
+import DialogItem from "./DialogItem";
 
 const MyMessages = (props) => {
 

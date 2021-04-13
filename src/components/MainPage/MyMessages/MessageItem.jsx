@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./../MyMessages.module.css";
+import style from "./MyMessages.module.css";
 
 const MessageItem = (props) => {
 	return (
