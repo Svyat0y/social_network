@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './MyMessages.module.css';
-import MessageItem from "./MessageItem";
-import DialogItem from "./DialogItem";
+import MessageItem from './MessageItem';
+import DialogItem from './DialogItem';
 
 const MyMessages = (props) => {
 
@@ -37,8 +37,8 @@ const MyMessages = (props) => {
 		})
 	}
 
-	let dialogs = props.stateMessagesPage.dialogsData.map(dialog => <DialogItem userImg={dialog.userImg} name={dialog.name} key={dialog.id} />)
-	let messages = props.stateMessagesPage.messagesData.map(message => <MessageItem message={message.message} key={message.id} />)
+	let dialogs = props.stateMessagesPage.dialogsData.map(dialog => <DialogItem userImg={dialog.userImg} name={dialog.name} key={dialog.id} id={dialog.id} />)
+	let messages = props.stateMessagesPage.messagesData.map(message => <MessageItem message={message.message} key={message.id} id={message.id} />)
 
 	const addDialogMessage = () => {
 		props.addDialogMessage()

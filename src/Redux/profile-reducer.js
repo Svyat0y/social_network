@@ -39,9 +39,9 @@ const profileReducer = (state = initialState, action) => {
 	}
 }
 
-export const onChangePostTextAC = (text) => ({type: UPDATE_POST_MESSAGE_TEXT, newText: text})
-export const addPostAC = () => ({type: ADD_POST})
-export const setPostDataAC = (postDataItems) => ({type: SET_POST_DATA, postDataItems: postDataItems})
+export const onChangePostText = (text) => ({type: UPDATE_POST_MESSAGE_TEXT, newText: text})
+export const addPost = () => ({type: ADD_POST})
+export const setPostData = (postDataItems) => ({type: SET_POST_DATA, postDataItems: postDataItems})
 
 export default profileReducer
 

@@ -17,6 +17,4 @@ const mapDispatchToProps = (dispatch) => {
 	}
 }
 
-const AvatarsContainer = connect(mapStateToProps, mapDispatchToProps)(Avatars);
-
-export default AvatarsContainer;
+export default connect(mapStateToProps, mapDispatchToProps)(Avatars);

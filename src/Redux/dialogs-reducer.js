@@ -49,9 +49,9 @@ const dialogsReducer = (state = initialState, action) => {
 	}
 }
 
-export const addMessageAC = () => ({type: ADD_MESSAGE});
-export const onChangeMessageTextAC = (text) => ({type: UPDATE_DIALOG_MESSAGE_TEXT, newText: text});
-export const clearMessageInDialogAC = () => ({type: CLEAR_DIALOG_MESSAGE_TEXT});
-export const setMessagesDataAC = (messagesPageData) => ({type: SET_MESSAGES_PAGE_DATA, messagesPageData: messagesPageData})
+export const addDialogMessage = () => ({type: ADD_MESSAGE});
+export const onChangeMessageText = (text) => ({type: UPDATE_DIALOG_MESSAGE_TEXT, newText: text});
+export const clearMessageInDialog = () => ({type: CLEAR_DIALOG_MESSAGE_TEXT});
+export const setMessagesData = (messagesPageData) => ({type: SET_MESSAGES_PAGE_DATA, messagesPageData: messagesPageData})
 
 export default dialogsReducer;

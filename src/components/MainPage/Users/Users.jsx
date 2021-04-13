@@ -1,5 +1,6 @@
 import React from 'react';
-import style from "./Users.module.css";
+import style from './Users.module.css';
+import Preloader from '../../common/Preloader/Preloader';
 
 const Users = (props) => {
 
@@ -15,15 +16,12 @@ const Users = (props) => {
 				{pages.map((p, index) => <span
 					key={index}
 					className={`${style.pg_number} ${props.currentPage === p && style.pg_number_active}`}
-					onClick={() => {
-						props.onPageChanged(p)
-						props.startFetchingAnimation()
-					}}>{p}</span>)}
+					onClick={() => {props.onPageChanged(p)}}>{p}</span>)}
 			</div>
 
 			<div>
 				{
-					props.isFetchingAnimation === false
+					props.isFetching === false
 						?
 						props.users.map(user => <div className={style.wrapper}>
 							<div className={style.box_wrapper}>
@@ -45,8 +43,8 @@ const Users = (props) => {
 							</div>
 						</div>)
 						:
-						<div className={style.fetching}>
-
+						<div className={style.preloader_wr}>
+							<Preloader />
 						</div>
 				}
 			</div>
