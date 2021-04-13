@@ -1,6 +1,6 @@
 import React from 'react';
-import UserItem from "./UserItem/UserItem";
-import style from './Users.module.css'
+import Users from "./Users/Users";
+// import style from './Users.module.css'
 import * as axios from 'axios'
 
 // {
@@ -26,7 +26,7 @@ import * as axios from 'axios'
 // }
 // export default Users;
 
-class Users extends React.Component {
+class UsersAPIComponent extends React.Component {
 
 	componentDidMount() {
 		this.startFetchingAnimation()
@@ -36,7 +36,7 @@ class Users extends React.Component {
 				this.props.setTotalCount(response.data.totalCount)
 			})
 	}
-	onPageNumber = (currentPage) => {
+	onPageChanged = (currentPage) => {
 		this.props.setCurrentPage(currentPage)
 		axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${currentPage}&count=${this.props.pageSize}`)
 			.then(response => {
@@ -48,43 +48,17 @@ class Users extends React.Component {
 	}
 
 	render() {
-
-		const toggleFollow = userId => this.props.toggleFollow(userId)
-
-		let pages = []
-		let pagesCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize)
-		for (let i = 1; i <= pagesCount; i++) {
-			pages.push(i)
-		}
-
-		let users = this.props.users.map(user => <UserItem user={user} toggleFollow={toggleFollow} key={user.id}/>)
-
-		return (
-			<div>
-				<div>
-					{pages.map((p, index) => <span
-						key={index}
-						className={`${style.pg_number} ${this.props.currentPage === p && style.pg_number_active}`}
-						onClick={() => {
-							this.onPageNumber(p)
-							this.startFetchingAnimation()
-						}}>{p}</span>)}
-				</div>
-
-				<div>
-					{
-						this.props.isFetchingAnimation === false
-							?
-							users
-							:
-							<div className={style.fetching}>
-
-							</div>
-					}
-				</div>
-			</div>
-		)
+		return 	<div><Users
+			totalUsersCount={this.props.totalUsersCount}
+			pageSize={this.props.pageSize}
+			currentPage={this.props.currentPage}
+			users={this.props.users}
+			isFetchingAnimation={this.props.isFetchingAnimation}
+			onPageChanged={this.onPageChanged}
+			startFetchingAnimation={this.startFetchingAnimation}
+			toggleFollow={this.props.toggleFollow}
+		/></div>
 	}
 }
 
-export default Users
+export default UsersAPIComponent
