@@ -1,5 +1,7 @@
-import React from 'react'
-import style from './MyPosts.module.css'
+import React from 'react';
+import style from './MyPosts.module.css';
+import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const MyPost = (props) => {
 	return (
@@ -15,8 +17,9 @@ const MyPost = (props) => {
 					<p>{props.message}</p>
 				</div>
 				<div>
-					<span className={style.post_likeMessage}>like</span>
-					<span className={style.post_likeCount}>{' ' + props.likeCount}</span>
+					<span className={style.post_likeMessage}><FontAwesomeIcon icon={faThumbsUp} />
+						<span className={style.post_likeCount}>{' ' + props.likeCount}</span>
+					</span>
 				</div>
 			</div>
 		</div>

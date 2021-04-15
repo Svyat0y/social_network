@@ -4,6 +4,9 @@
     margin: 15px;
     color: #fff;
 }
+h3 {
+    display: inline-block;
+}
 .main_wr form {
     max-width: 100%;
     display: flex;
@@ -87,14 +90,21 @@
 }
 
 .post_likeMessage {
-    color: #73DAFB;
+    color: #9099B5;
+    font-size: 18px;
     cursor: pointer;
     display: inline-block;
+    border: 1px solid rgba(65,70,83,0.5);
+    padding: 5px 15px;
 }
 .post_likeCount,
 .post_likeMessage {
     user-select: none;
 }
+.post_likeCount {
+    color: #73DAFB;
+}
 .post_likeMessage:active {
+    transform: translatey(-1px);
     color: rgba(129,218,251, 0.8);
 }

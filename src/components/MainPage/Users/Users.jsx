@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './Users.module.css';
 import Preloader from '../../common/Preloader/Preloader';
+import {NavLink} from "react-router-dom";
 
 const Users = (props) => {
 
@@ -16,7 +17,9 @@ const Users = (props) => {
 				{pages.map((p, index) => <span
 					key={index}
 					className={`${style.pg_number} ${props.currentPage === p && style.pg_number_active}`}
-					onClick={() => {props.onPageChanged(p)}}>{p}</span>)}
+					onClick={() => {
+						props.onPageChanged(p)
+					}}>{p}</span>)}
 			</div>
 
 			<div>
@@ -25,9 +28,11 @@ const Users = (props) => {
 						?
 						props.users.map(user => <div className={style.wrapper}>
 							<div className={style.box_wrapper}>
-								<div className={style.img_wrapper}>
-									<img src={user.photos.small} alt="avatar"/>
-								</div>
+								<NavLink to={'/profile/' + user.id} >
+									<div className={style.img_wrapper}>
+										<img src={user.photos.small} alt="avatar"/>
+									</div>
+								</NavLink>
 								<div>
 									<button onClick={() => props.toggleFollow(user.id)}
 											className={`${style.btnFollowed} ${user.followed ? style.btnUnFollow : ''}`}>
@@ -44,7 +49,7 @@ const Users = (props) => {
 						</div>)
 						:
 						<div className={style.preloader_wr}>
-							<Preloader />
+							<Preloader/>
 						</div>
 				}
 			</div>

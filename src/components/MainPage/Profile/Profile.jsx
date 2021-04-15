@@ -1,15 +1,16 @@
 import React from 'react';
 import style from './Profile.module.css';
 import MyPostsContainer from "./MyPost/MyPostsContainer";
-import MyPageHeader from "./MyPageHeader/MyPageHeader";
+import ProfileHeader from "./ProfileHeader/ProfileHeader";
 
-const Profile = () => {
+const Profile = (props) => {
+
     return (
         <div className={style.wrapper}>
-            <MyPageHeader />
+            <ProfileHeader profile={props.profile} />
             <MyPostsContainer />
         </div>
     );
 }
 
-export default Profile;
+export default Profile

@@ -8,7 +8,7 @@ const Aside = () => {
 		<aside className={style.aside}>
 			<div className={style.nav_wrapper}>
 				<ul className={style.nav}>
-					<li><NavLink exact to='/' activeClassName={style.active}>My page</NavLink></li>
+					<li><NavLink to='/profile' activeClassName={style.active}>My page</NavLink></li>
 					<li><NavLink to='/myMessages' activeClassName={style.active}>My messages</NavLink></li>
 					<li><NavLink to='/myMusic' activeClassName={style.active}>My Music</NavLink></li>
 					<li><NavLink to='/notifications' activeClassName={style.active}>My notifications</NavLink></li>

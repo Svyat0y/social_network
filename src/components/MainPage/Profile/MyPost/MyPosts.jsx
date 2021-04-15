@@ -29,7 +29,7 @@ const MyPosts = (props) => {
 
 	return (
 		<div className={style.main_wr}>
-			<span>My Post</span>
+			<h3>My Post</h3>
 			<form>
 				<textarea
 					onChange={onChangePostText}
