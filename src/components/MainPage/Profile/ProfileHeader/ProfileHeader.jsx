@@ -4,6 +4,7 @@ import Preloader from "../../../common/Preloader/Preloader";
 import { faFacebookSquare, faTwitterSquare, faInstagram, faVk, faYoutube, faGithubSquare } from '@fortawesome/free-brands-svg-icons';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {NavLink} from "react-router-dom";
 
 
 const ProfileHeader = (props) => {
@@ -40,42 +41,42 @@ const ProfileHeader = (props) => {
 
 					<h5 className={style.contacts_wr}>Contacts:</h5>
 					<span className={style.social_icons}>
-						<a target="blank"
+						<a target="_blank"
 						   title={'GitHub'}
 						   href={!props.profile.contacts.github
-							   ? 'https://github.com'
+							   ? 'https://twitter.com'
 							   : `https://${props.profile.contacts.github}`}>
 							<FontAwesomeIcon icon={faGithubSquare}/>
 						</a>
-						<a target="blank"
+						<a target="_blank"
 						   title={'facebook'}
 						   href={!props.profile.contacts.facebook
 							   ? 'https://facebook.com'
 							   : `https://${props.profile.contacts.facebook}`}>
 							<FontAwesomeIcon icon={faFacebookSquare}/>
 						</a>
-						<a target="blank"
+						<a target="_blank"
 						   title={'instagram'}
 						   href={!props.profile.contacts.instagram
 							   ? 'https://instagram.com'
 							   : `https://${props.profile.contacts.instagram}`}>
 							<FontAwesomeIcon icon={faInstagram}/>
 						</a>
-						<a target="blank"
+						<a target="_blank"
 						   title={'vkontakte'}
 						   href={!props.profile.contacts.vk
-							   ? 'https://vkontakte.com'
+							   ? 'https://vk.com'
 							   : `https://${props.profile.contacts.vk}`}>
 							<FontAwesomeIcon icon={faVk}/>
 						</a>
-						<a target="blank"
+						<a target="_blank"
 						   title={'youtube'}
 						   href={!props.profile.contacts.youtube
 							   ? 'https://youtube.com'
 							   : `https://${props.profile.contacts.youtube}`}>
 							<FontAwesomeIcon icon={faYoutube}/>
 						</a>
-						<a target="blank"
+						<a target="_blank"
 						   title={'twitter'}
 						   href={!props.profile.contacts.twitter
 							   ? 'https://twitter.com'
@@ -84,13 +85,13 @@ const ProfileHeader = (props) => {
 						</a>
 						{!props.profile.contacts.website
 							? null
-							: <a target="blank"
+							: <a target="_blank"
 								 title={'mainlink'}
 								 href={'https://' + props.profile.contacts.website}>
 								<FontAwesomeIcon icon={faLink}/></a>}
 						{!props.profile.contacts.mainLink
 							? null
-							: <a target="blank"
+							: <a target="_blank"
 								 title={'mainlink'}
 								 href={'https://' + props.profile.contacts.mainLink}>
 								<FontAwesomeIcon icon={faLink}/></a>}
