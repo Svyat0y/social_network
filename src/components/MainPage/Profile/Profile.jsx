@@ -5,12 +5,13 @@ import ProfileHeader from "./ProfileHeader/ProfileHeader";
 
 const Profile = (props) => {
 
-    return (
-        <div className={style.wrapper}>
-            <ProfileHeader profile={props.profile} />
-            <MyPostsContainer />
-        </div>
-    );
+	return (
+		<div className={style.wrapper}>
+			<ProfileHeader profile={props.profile}/>
+			<MyPostsContainer/>
+		</div>
+
+	);
 }
 
 export default Profile

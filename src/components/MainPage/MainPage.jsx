@@ -11,7 +11,7 @@ import ProfileContainer from "./Profile/ProfileContainer";
 const MainPage = () => {
 	return (
 		<div className={style.mainPage}>
-			<Route path='/profile' render={() => <ProfileContainer/>}/>
+			<Route path='/profile/:userId?' render={() => <ProfileContainer/>}/>
 			<Route path='/myMessages' render={() => <MyMessagesContainer/>}/>
 			<Route path='/myMusic' render={() => <Music/>}/>
 			<Route path='/notifications' render={() => <Notifications/>}/>

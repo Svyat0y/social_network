@@ -1,37 +1,25 @@
 import React from 'react';
 import style from './ProfileHeader.module.css';
-import Preloader from "../../../common/Preloader/Preloader";
-import { faFacebookSquare, faTwitterSquare, faInstagram, faVk, faYoutube, faGithubSquare } from '@fortawesome/free-brands-svg-icons';
-import { faLink } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {NavLink} from "react-router-dom";
-
+import {faFacebookSquare, faTwitterSquare, faInstagram, faVk, faYoutube, faGithubSquare} from '@fortawesome/free-brands-svg-icons';
+import {faLink} from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import images from "../../../../assets/images/images";
 
 const ProfileHeader = (props) => {
-
-	if (!props.profile) {
-		return (
-			<div className={style.preloader_wr}>
-				<Preloader/>
-			</div>
-		)
-	}
-
-	console.log(props.profile.contacts.youtube)
 
 	return (
 		<div className={style.profileHeader_wrapper}>
 
 			<div className={style.img_wrapper}>
-				<img src={props.profile.photos.large} alt="avatar"/>
+				<img src={props.profile.photos.large ? props.profile.photos.large : images.imgProfileNoFound} alt="avatar"/>
 			</div>
 
 			<div className={style.profileHeader_info}>
 
 				<div className={style.profileHeader_top_info}>
 					<h1>{props.profile.fullName}</h1>
-					<span className={style.lfj_title}>looking for a job: <span>{props.profile.lookingForAJob ? 'yes' : 'no'}</span></span>
-					<span className={style.lfj_desc}>job description: <span>{props.profile.lookingForAJobDescription}</span></span>
+					<span className={style.lfj_title}>Looking for a job: <span>{props.profile.lookingForAJob ? 'yes' : 'no'}</span></span>
+					<span className={style.lfj_desc}>Job description: <span>{props.profile.lookingForAJobDescription}</span></span>
 				</div>
 
 				<div className={style.about_info_wr}>
@@ -40,65 +28,77 @@ const ProfileHeader = (props) => {
 					<p>{props.profile.aboutMe}</p>
 
 					<h5 className={style.contacts_wr}>Contacts:</h5>
-					<span className={style.social_icons}>
-						<a target="_blank"
-						   title={'GitHub'}
-						   href={!props.profile.contacts.github
-							   ? 'https://twitter.com'
-							   : `https://${props.profile.contacts.github}`}>
-							<FontAwesomeIcon icon={faGithubSquare}/>
-						</a>
-						<a target="_blank"
-						   title={'facebook'}
-						   href={!props.profile.contacts.facebook
-							   ? 'https://facebook.com'
-							   : `https://${props.profile.contacts.facebook}`}>
-							<FontAwesomeIcon icon={faFacebookSquare}/>
-						</a>
-						<a target="_blank"
-						   title={'instagram'}
-						   href={!props.profile.contacts.instagram
-							   ? 'https://instagram.com'
-							   : `https://${props.profile.contacts.instagram}`}>
-							<FontAwesomeIcon icon={faInstagram}/>
-						</a>
-						<a target="_blank"
-						   title={'vkontakte'}
-						   href={!props.profile.contacts.vk
-							   ? 'https://vk.com'
-							   : `https://${props.profile.contacts.vk}`}>
-							<FontAwesomeIcon icon={faVk}/>
-						</a>
-						<a target="_blank"
-						   title={'youtube'}
-						   href={!props.profile.contacts.youtube
-							   ? 'https://youtube.com'
-							   : `https://${props.profile.contacts.youtube}`}>
-							<FontAwesomeIcon icon={faYoutube}/>
-						</a>
-						<a target="_blank"
-						   title={'twitter'}
-						   href={!props.profile.contacts.twitter
-							   ? 'https://twitter.com'
-							   : `https://${props.profile.contacts.twitter}`}>
-							<FontAwesomeIcon icon={faTwitterSquare}/>
-						</a>
+					<ul className={style.social_icons}>
+						<li>
+							<a target="_blank"
+							   title={'GitHub'}
+							   href={!props.profile.contacts.github
+								   ? 'https://twitter.com'
+								   : props.profile.contacts.github}>
+								<FontAwesomeIcon icon={faGithubSquare}/>
+							</a>
+						</li>
+						<li>
+							<a target="_blank"
+							   title={'Facebook'}
+							   href={!props.profile.contacts.facebook
+								   ? 'https://facebook.com'
+								   : props.profile.contacts.facebook}>
+								<FontAwesomeIcon icon={faFacebookSquare}/>
+							</a>
+						</li>
+						<li>
+							<a target="_blank"
+							   title={'Instagram'}
+							   href={!props.profile.contacts.instagram
+								   ? 'https://instagram.com'
+								   : props.profile.contacts.instagram}>
+								<FontAwesomeIcon icon={faInstagram}/>
+							</a>
+						</li>
+						<li>
+							<a target="_blank"
+							   title={'Vkontakte'}
+							   href={!props.profile.contacts.vk
+								   ? 'https://vk.com'
+								   : props.profile.contacts.vk}>
+								<FontAwesomeIcon icon={faVk}/>
+							</a>
+						</li>
+						<li>
+							<a target="_blank"
+							   title={'Youtube'}
+							   href={!props.profile.contacts.youtube
+								   ? 'https://youtube.com'
+								   : props.profile.contacts.youtube}>
+								<FontAwesomeIcon icon={faYoutube}/>
+							</a>
+						</li>
+						<li>
+							<a target="_blank"
+							   title={'Twitter'}
+							   href={!props.profile.contacts.twitter
+								   ? 'https://twitter.com'
+								   : props.profile.contacts.twitter}>
+								<FontAwesomeIcon icon={faTwitterSquare}/>
+							</a>
+						</li>
+
 						{!props.profile.contacts.website
 							? null
-							: <a target="_blank"
-								 title={'mainlink'}
-								 href={'https://' + props.profile.contacts.website}>
-								<FontAwesomeIcon icon={faLink}/></a>}
+							: <li><a target="_blank"
+									 title={'Website'}
+									 href={props.profile.contacts.website}>
+								<FontAwesomeIcon icon={faLink}/></a></li>}
+
 						{!props.profile.contacts.mainLink
 							? null
-							: <a target="_blank"
-								 title={'mainlink'}
-								 href={'https://' + props.profile.contacts.mainLink}>
-								<FontAwesomeIcon icon={faLink}/></a>}
-					</span>
-
+							: <li><a target="_blank"
+									 title={'Mainlink'}
+									 href={props.profile.contacts.mainLink}>
+								<FontAwesomeIcon icon={faLink}/></a></li>}
+					</ul>
 				</div>
-
 			</div>
 		</div>
 	);

@@ -4,7 +4,9 @@ import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const MyPost = (props) => {
+
 	return (
+
 		<div className={style.post_wr}>
 			<div className={style.post_box_wr}>
 				<div className={style.post_img_wr}>
