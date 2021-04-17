@@ -3,6 +3,7 @@ import style from './Users.module.css';
 import Preloader from '../../common/Preloader/Preloader';
 import {NavLink} from "react-router-dom";
 import images from "../../../assets/images/images";
+import * as axios from "axios";
 
 const Users = (props) => {
 
@@ -29,16 +30,47 @@ const Users = (props) => {
 						?
 						props.users.map(user => <div className={style.wrapper}>
 							<div className={style.box_wrapper}>
-								<NavLink to={'/profile/' + user.id} >
+								<NavLink to={'/profile/' + user.id}>
 									<div className={style.img_wrapper}>
 										<img src={user.photos.small ? user.photos.small : images.imgAvatarNoFound} alt="avatar"/>
 									</div>
 								</NavLink>
 								<div>
-									<button onClick={() => props.toggleFollow(user.id)}
-											className={`${style.btnFollowed} ${user.followed ? style.btnUnFollow : ''}`}>
-										{user.followed ? 'Unfollow' : 'Follow'}
-									</button>
+									{
+										!user.followed
+											?
+											<button onClick={() => {
+												axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${user.id}`, {}, {
+													withCredentials: true,
+													headers: {
+														'API-KEY': 'bb8e013c-9223-4dee-8a5a-b96156c04ec6'
+													}
+												})
+													.then(response => {
+														if (response.data.resultCode === 0) {
+															props.toggleFollow(user.id);
+														}
+													})
+											}} className={`${style.btnFollowed} ${user.followed ? style.btnUnFollow : ''}`}>
+												follow
+											</button>
+											:
+											<button onClick={() => {
+												axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${user.id}`, {
+													withCredentials: true,
+													headers: {
+														'API-KEY': 'bb8e013c-9223-4dee-8a5a-b96156c04ec6'
+													}
+												})
+													.then(response => {
+														if (response.data.resultCode === 0) {
+															props.toggleFollow(user.id)
+														}
+													})
+											}} className={`${style.btnFollowed} ${user.followed ? style.btnUnFollow : ''}`}>
+												unfollow
+											</button>
+									}
 								</div>
 							</div>
 							<div>

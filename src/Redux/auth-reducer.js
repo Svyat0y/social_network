@@ -5,7 +5,7 @@ let initialState = {
 	id: null,
 	email: null,
 	login: null,
-	isLogin: false
+	isAuth: false
 }
 
 const authReducer = (state = initialState, action) => {
@@ -15,7 +15,7 @@ const authReducer = (state = initialState, action) => {
 		case SET_USER_DATA: {
 			return {
 				...state, ...action.data,
-				isLogin: true
+				isAuth: true
 			}
 		}
 		// case UNSET_USER_DATA: {
