@@ -6,7 +6,6 @@ import images from "../../../assets/images/images";
 import * as axios from "axios";
 
 const Users = (props) => {
-
 	let pages = []
 	let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize)
 	for (let i = 1; i <= pagesCount; i++) {
@@ -39,7 +38,8 @@ const Users = (props) => {
 									{
 										!user.followed
 											?
-											<button onClick={() => {
+											<button disabled={props.isFollowingProgress.some(id => id === user.id)} onClick={() => {
+												props.toggleIsFollowingProgress(true, user.id)
 												axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${user.id}`, {}, {
 													withCredentials: true,
 													headers: {
@@ -50,12 +50,14 @@ const Users = (props) => {
 														if (response.data.resultCode === 0) {
 															props.toggleFollow(user.id);
 														}
+														props.toggleIsFollowingProgress(false, user.id)
 													})
 											}} className={`${style.btnFollowed} ${user.followed ? style.btnUnFollow : ''}`}>
 												follow
 											</button>
 											:
-											<button onClick={() => {
+											<button disabled={props.isFollowingProgress.some(id => id === user.id)} onClick={() => {
+												props.toggleIsFollowingProgress(true, user.id)
 												axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${user.id}`, {
 													withCredentials: true,
 													headers: {
@@ -66,6 +68,7 @@ const Users = (props) => {
 														if (response.data.resultCode === 0) {
 															props.toggleFollow(user.id)
 														}
+														props.toggleIsFollowingProgress(false, user.id)
 													})
 											}} className={`${style.btnFollowed} ${user.followed ? style.btnUnFollow : ''}`}>
 												unfollow

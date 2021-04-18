@@ -30,6 +30,9 @@
 .btnUnFollow {
     background: rgba(129,218,251, 0.8);
 }
+.btnFollowed:disabled {
+    background: rgba(234,234,234, 1) ;
+}
 
 .img_wrapper {
     width: 60px;
