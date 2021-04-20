@@ -1,3 +1,5 @@
+import {followedAPI, usersAPI} from "../api/api";
+
 const TOGGLE_FOLLOW = 'TOGGLE_FOLLOW'
 const SET_USERS = 'SET_USERS'
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE'
@@ -63,5 +65,40 @@ export const setCurrentPage = (currentPage) => ({type: SET_CURRENT_PAGE, current
 export const setTotalCount = (totalCount) => ({type: SET_TOTAL_COUNT, totalCount})
 export const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching})
 export const toggleIsFollowingProgress = (isFollowing, userId) => ({type: TOGGLE_IS_FOLLOWING_PROGRESS, isFollowing, userId})
+
+export const getUsers = (currentPage, pageSize) => {
+	return (dispatch) => {
+		dispatch(toggleIsFetching(true))
+		dispatch(setCurrentPage(currentPage))
+		usersAPI.getUsers(currentPage, pageSize).then(data => {
+			dispatch(toggleIsFetching(false))
+			dispatch(setUsers(data.items))
+			dispatch(setTotalCount(data.totalCount))
+		})
+	}
+}
+
+export const followAccept = (userId) => {
+	return (dispatch) => {
+		dispatch(toggleIsFollowingProgress(true, userId))
+		followedAPI.getSub(userId).then(data => {
+			if (data.resultCode === 0) {
+				dispatch(toggleFollow(userId))
+				dispatch(toggleIsFollowingProgress(false, userId))
+			}
+		})
+	}
+}
+export const unFollowAccept = (userId) => {
+	return (dispatch) => {
+		dispatch(toggleIsFollowingProgress(true, userId))
+		followedAPI.deleteSub(userId).then(data => {
+			if (data.resultCode === 0) {
+				dispatch(toggleFollow(userId))
+				dispatch(toggleIsFollowingProgress(false, userId))
+			}
+		})
+	}
+}
 
 export default usersReducer

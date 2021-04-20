@@ -25,7 +25,7 @@ const ProfileHeader = (props) => {
 				<div className={style.about_info_wr}>
 
 					<h5>About Me: </h5>
-					<p>{props.profile.aboutMe}</p>
+					<p>{props.profile.aboutMe ? props.profile.aboutMe : 'this user did not leave a message about himself'}</p>
 
 					<h5 className={style.contacts_wr}>Contacts:</h5>
 					<ul className={style.social_icons}>
