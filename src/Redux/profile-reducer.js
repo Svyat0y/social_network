@@ -18,9 +18,11 @@ const profileReducer = (state = initialState, action) => {
 			if (state.newPostText && state.newPostText.replace(/\s/g, "")) {
 				return {
 					...state,
-					postData: [...state.postData, {id:3,
+					postData: [...state.postData, {
+						id: 3,
 						userImg: 'https://www.meme-arsenal.com/memes/53336f6e6ad81d19f0d6196424f53e08.jpg',
-						name: 'Васюнь', message: state.newPostText, likeCount: 0}],
+						name: 'Васюнь', message: state.newPostText, likeCount: 0
+					}],
 					newPostText: ""
 				}
 			}
@@ -54,15 +56,10 @@ export const addPost = () => ({type: ADD_POST})
 export const setPostData = (postDataItem) => ({type: SET_POST_DATA, postDataItem})
 export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile})
 
-export const getProfile = (userId) => {
-	return (dispatch) => {
-		if (!userId) {
-			userId = 16553
-		}
-		profileAPI.getProfile(userId).then(data => {
-			dispatch(setUserProfile(data))
-		})
-	}
+export const getUserProfile = (userId) => (dispatch) => {
+	profileAPI.getProfile(userId).then(data => {
+		dispatch(setUserProfile(data))
+	})
 }
 
 export default profileReducer

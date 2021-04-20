@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './Profile.module.css';
 import {connect} from "react-redux";
-import {getProfile} from "../../../Redux/profile-reducer";
+import {getUserProfile} from "../../../Redux/profile-reducer";
 import Profile from "./Profile";
 import {withRouter} from 'react-router-dom';
 import Preloader from "../../common/Preloader/Preloader";
@@ -9,7 +9,11 @@ import Preloader from "../../common/Preloader/Preloader";
 class ProfileContainer extends React.Component {
 
 	componentDidMount() {
-		this.props.getProfile(this.props.match.params.userId)
+		let userId = this.props.match.params.userId
+		if (!userId) {
+			userId = 16553
+		}
+		this.props.getUserProfile(userId)
 	}
 
 	render() {
@@ -39,4 +43,4 @@ const mapStateToProps = (state) => {
 
 const WithUrlDataContainerComponent = withRouter(ProfileContainer)
 
-export default connect(mapStateToProps,{getProfile})(WithUrlDataContainerComponent)
+export default connect(mapStateToProps,{getUserProfile})(WithUrlDataContainerComponent)
