@@ -1,5 +1,7 @@
 import React from 'react';
 import style from './Notifications.module.css';
+import {withAuthRedirect} from "../../../hoc/withAuthRedirect";
+import Music from "../Music/Music";
 
 const Notifications = () => {
     return (

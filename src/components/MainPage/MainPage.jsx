@@ -7,6 +7,7 @@ import {Route} from "react-router-dom";
 import MyMessagesContainer from "./MyMessages/MyMessagesContainer";
 import UsersContainer from "./Users/UsersContainer";
 import ProfileContainer from "./Profile/ProfileContainer";
+import Login from "../Login/Login";
 
 const MainPage = () => {
 	return (
@@ -17,6 +18,7 @@ const MainPage = () => {
 			<Route path='/notifications' render={() => <Notifications/>}/>
 			<Route path='/findUsers' render={() => <UsersContainer/>}/>
 			<Route path='/mySettings' render={() => <MySettings/>}/>
+			<Route path='/login' render={() => <Login />}/>
 		</div>
 	)
 }
