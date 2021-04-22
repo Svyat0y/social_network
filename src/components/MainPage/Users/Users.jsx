@@ -35,17 +35,21 @@ const Users = (props) => {
 								</NavLink>
 								<div>
 									{
-										!user.followed
-											? <button disabled={props.isFollowingProgress.some(id => id === user.id)}
-													  onClick={() => props.followAccept(user.id)}
-													  className={`${style.btnFollowed} ${user.followed ? style.btnUnFollow : ''}`}>
-												follow
-											</button>
-											: <button disabled={props.isFollowingProgress.some(id => id === user.id)}
-													  onClick={() => props.unFollowAccept(user.id)}
-													  className={`${style.btnFollowed} ${user.followed ? style.btnUnFollow : ''}`}>
-												unfollow
-											</button>
+										props.isAuth
+											?
+											!user.followed
+												? <button disabled={props.isFollowingProgress.some(id => id === user.id)}
+														  onClick={() => props.followAccept(user.id)}
+														  className={`${style.btnFollowed} ${user.followed ? style.btnUnFollow : ''}`}>
+													follow
+												</button>
+												: <button disabled={props.isFollowingProgress.some(id => id === user.id)}
+														  onClick={() => props.unFollowAccept(user.id)}
+														  className={`${style.btnFollowed} ${user.followed ? style.btnUnFollow : ''}`}>
+													unfollow
+												</button>
+											:
+											''
 									}
 								</div>
 							</div>

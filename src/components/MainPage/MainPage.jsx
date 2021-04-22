@@ -9,7 +9,7 @@ import UsersContainer from "./Users/UsersContainer";
 import ProfileContainer from "./Profile/ProfileContainer";
 import Login from "../Login/Login";
 
-const MainPage = () => {
+const MainPage = (props) => {
 	return (
 		<div className={style.mainPage}>
 			<Route path='/profile/:userId?' render={() => <ProfileContainer/>}/>

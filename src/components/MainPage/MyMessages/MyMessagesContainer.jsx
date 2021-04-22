@@ -3,6 +3,7 @@ import {addDialogMessage, clearMessageInDialog, onChangeMessageText, setMessages
 import MyMessages from "./MyMessages";
 import {connect} from "react-redux";
 import {withAuthRedirect} from "../../../hoc/withAuthRedirect";
+import {compose} from "redux";
 
 const mapStateToProps = (state) => {
 	return {
@@ -10,7 +11,7 @@ const mapStateToProps = (state) => {
 	}
 }
 
-const AuthRedirectComponent = withAuthRedirect(MyMessages)
-
-export default connect(mapStateToProps,
-	{setMessagesData, addDialogMessage, onChangeMessageText, clearMessageInDialog})(AuthRedirectComponent)
+export default compose(
+	connect(mapStateToProps,{setMessagesData, addDialogMessage, onChangeMessageText, clearMessageInDialog}),
+	withAuthRedirect
+)(MyMessages)
