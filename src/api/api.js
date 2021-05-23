@@ -14,6 +14,15 @@ export const usersAPI = {
 	}
 }
 
+export const followedAPI = {
+	getSub(userId) {
+		return instance.post(`follow/${userId}`).then(response => response.data)
+	},
+	deleteSub(userId) {
+		return instance.delete(`follow/${userId}`).then(response => response.data)
+	}
+}
+
 export const profileAPI = {
 	getProfile(userId) {
 		return instance.get(`profile/${userId}`).then(response => response.data)
@@ -25,13 +34,3 @@ export const authAPI = {
 		return instance.get(`auth/me`).then(response => response.data)
 	}
 }
-
-export const followedAPI = {
-	getSub(userId) {
-		return instance.post(`follow/${userId}`).then(response => response.data)
-	},
-	deleteSub(userId) {
-		return instance.delete(`follow/${userId}`).then(response => response.data)
-	}
-}
-

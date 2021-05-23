@@ -30,7 +30,7 @@ const Users = (props) => {
 							<div className={style.box_wrapper}>
 								<NavLink to={'/profile/' + user.id}>
 									<div className={style.img_wrapper}>
-										<img src={user.photos.small ? user.photos.small : images.imgAvatarNoFound} alt="avatar"/>
+										<img src={user.photos.small ? user.photos.small : images.imgAvatarNotFound} alt="avatar"/>
 									</div>
 								</NavLink>
 								<div>

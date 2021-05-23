@@ -16,7 +16,7 @@ class UsersContainer extends React.Component {
 		return <>
 			<Users {...this.props} onPageChanged={this.onPageChanged} />
 		</>
-	}s
+	}
 }
 
 const mapStateToProps = (state) => {

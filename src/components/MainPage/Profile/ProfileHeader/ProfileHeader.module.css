@@ -41,6 +41,22 @@ h1,h5 {
     color: #73DAFB;
 }
 
+.lfj_status {
+    display: block;
+    color: #7C859D;
+    margin-bottom: 10px;
+}
+
+.inputStatus {
+    margin-bottom: 10px;
+    height: 18px;
+    background: #7C859D;
+    color: white;
+    border-radius: 2px;
+    padding: 10px;
+    width: 100%;
+}
+
 .about_info_wr h5 {
     color: #fff;
     font-size: 22px;

@@ -4,6 +4,7 @@ import {faFacebookSquare, faTwitterSquare, faInstagram, faVk, faYoutube, faGithu
 import {faLink} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import images from "../../../../assets/images/images";
+import ProfileStatus from "./ProfileStatus";
 
 const ProfileHeader = (props) => {
 
@@ -11,13 +12,16 @@ const ProfileHeader = (props) => {
 		<div className={style.profileHeader_wrapper}>
 
 			<div className={style.img_wrapper}>
-				<img src={props.profile.photos.large ? props.profile.photos.large : images.imgProfileNoFound} alt="avatar"/>
+				<img src={props.profile.photos.large ? props.profile.photos.large : images.imgProfileNotFound} alt="avatar"/>
 			</div>
 
 			<div className={style.profileHeader_info}>
 
 				<div className={style.profileHeader_top_info}>
 					<h1>{props.profile.fullName}</h1>
+
+					<ProfileStatus status='fixed status'/>
+
 					<span className={style.lfj_title}>Looking for a job: <span>{props.profile.lookingForAJob ? 'yes' : 'no'}</span></span>
 					<span className={style.lfj_desc}>Job description: <span>{props.profile.lookingForAJobDescription}</span></span>
 				</div>
@@ -25,7 +29,10 @@ const ProfileHeader = (props) => {
 				<div className={style.about_info_wr}>
 
 					<h5>About Me: </h5>
-					<p>{props.profile.aboutMe ? props.profile.aboutMe : 'this user did not leave a message about himself'}</p>
+					<p>{props.profile.aboutMe ? props.profile.aboutMe : 'this user did not leave a' +
+						' message' +
+						' about' +
+						' himself'}</p>
 
 					<h5 className={style.contacts_wr}>Contacts:</h5>
 					<ul className={style.social_icons}>

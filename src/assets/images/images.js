@@ -1,7 +1,7 @@
-import imgAvatarNoFound from './No_image_available.png'
+import imgAvatarNotFound from './No_image_available.png'
 const images = {
-	imgAvatarNoFound: imgAvatarNoFound,
-	imgProfileNoFound: imgAvatarNoFound
+	imgAvatarNotFound: imgAvatarNotFound,
+	imgProfileNotFound: imgAvatarNotFound
 }
 
 export default images

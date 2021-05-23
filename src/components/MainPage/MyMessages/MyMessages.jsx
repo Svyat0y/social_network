@@ -15,7 +15,7 @@ const MyMessages = (props) => {
 				},
 				{
 					id: 2,
-					userImg: 'https://meragor.com/files/styles//ava_800_800_wm/standoff_158.jpg',
+					userImg: 'https://image1.thematicnews.com/uploads/images/00/00/41/2015/04/30/ad358ed4d0.jpg',
 					name: 'Panda'
 				},
 				{

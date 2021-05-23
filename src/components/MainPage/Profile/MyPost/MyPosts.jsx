@@ -10,7 +10,7 @@ const MyPosts = (props) => {
 				userImg: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6b7WENFquctsWy8WgMSHmFJbVyJXf0lQ4R2XRAQcd2WgOK2IIfFlLUFcAcsdnpA8S_Wg&usqp=CAU',
 				name: 'Andy', message: 'Hi, how are you?', likeCount: 15},
 			{id: 1,
-				userImg: 'https://meragor.com/files/styles//ava_800_800_wm/standoff_158.jpg',
+				userImg: 'https://image1.thematicnews.com/uploads/images/00/00/41/2015/04/30/ad358ed4d0.jpg',
 				name: 'Panda', message: "It's my first post", likeCount: 34}
 		])
 	}
