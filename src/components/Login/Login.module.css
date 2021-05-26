@@ -1,0 +1,7 @@
+.login_wr {
+    position: relative;
+    max-width: 200px;
+    height: auto;
+    margin: 0 auto;
+    top: calc(50% - 86px);
+}

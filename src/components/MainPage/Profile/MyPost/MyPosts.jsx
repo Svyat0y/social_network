@@ -1,6 +1,7 @@
 import React from 'react'
 import style from './MyPosts.module.css'
 import MyPost from "./MyPost"
+import {Field, reduxForm} from "redux-form";
 
 const MyPosts = (props) => {
 
@@ -18,36 +19,40 @@ const MyPosts = (props) => {
 	const posts = props.stateProfilePage.postData.map(p => <MyPost userImg={p.userImg} name={p.name} likeCount={p.likeCount}
 																   message={p.message} key={p.id}/>)
 
-	const addPost = () => {
-		props.addPost()
+	const addPostMessage = (values) => {
+		props.addPost(values.newPostMessage)
 	}
 
-	const onChangePostText = (e) => {
-		let text = e.target.value
-		props.onChangePostText(text)
-	}
+	// const onChangePostText = (e) => {
+	// 	let text = e.target.value
+	// 	props.onChangePostText(text)
+	// }
 
 	return (
 		<div className={style.main_wr}>
 			<h3>My Post</h3>
-			<form>
-				<textarea
-					onChange={onChangePostText}
-					value={props.stateProfilePage.newPostText}
-					placeholder='write a message'
-					name="post"
-					autoFocus={true}
-				/>
-				<button
-					onClick={addPost}
-					type="button"
-				>
-					Add post
-				</button>
-			</form>
+			<AddPostMessageRedux onSubmit={addPostMessage} />
 			{posts}
 		</div>
 	);
 }
+
+const AddPostMessage = (props) => {
+	return (
+		<form onSubmit={props.handleSubmit}>
+			<Field component='textarea' name='newPostMessage' />
+			{/*<textarea*/}
+			{/*	onChange={onChangePostText}*/}
+			{/*	value={props.stateProfilePage.newPostText}*/}
+			{/*	placeholder='write a message'*/}
+			{/*	name="post"*/}
+			{/*	autoFocus={true}*/}
+			{/*	/>*/}
+			<button>Add post</button>
+		</form>
+	)
+}
+
+const AddPostMessageRedux = reduxForm({form: 'addPostMessageForm'})(AddPostMessage)
 
 export default MyPosts;
