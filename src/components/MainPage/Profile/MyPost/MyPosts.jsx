@@ -2,6 +2,9 @@ import React from 'react'
 import style from './MyPosts.module.css'
 import MyPost from "./MyPost"
 import {Field, reduxForm} from "redux-form";
+import {maxLengthCreator} from "../../../../utils/validators/validators";
+// import {Textarea} from "../../../common/FormControls/FormControls";
+import {Element} from "../../../common/FormControls/FormControls";
 
 const MyPosts = (props) => {
 
@@ -37,10 +40,13 @@ const MyPosts = (props) => {
 	);
 }
 
+const maxLength30 = maxLengthCreator(5)
+const Textarea = Element('textarea')
+
 const AddPostMessage = (props) => {
 	return (
 		<form onSubmit={props.handleSubmit}>
-			<Field component='textarea' name='newPostMessage' />
+			<Field component={Textarea} name='newPostMessage' validate={[maxLength30]} placeholder='write a message' />
 			{/*<textarea*/}
 			{/*	onChange={onChangePostText}*/}
 			{/*	value={props.stateProfilePage.newPostText}*/}
