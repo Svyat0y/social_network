@@ -1,7 +1,7 @@
 .login_wr {
     max-width: 200px;
     height: auto;
-    margin: calc(50% - 86px) auto;
+    margin: calc(30% - 86px) auto;
 }
 .login_wr form input {
     margin: 3px 0 10px 0;

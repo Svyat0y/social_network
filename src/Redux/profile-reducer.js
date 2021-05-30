@@ -17,7 +17,7 @@ const profileReducer = (state = initialState, action) => {
 
 	switch (action.type) {
 		case ADD_POST:
-			// if (action.newPostMessage && action.newPostMessage.replace(/\s/g, "")) {
+			if (action.newPostMessage && action.newPostMessage.replace(/\s/g, "")) {
 				return {
 					...state,
 					postData: [...state.postData, {
@@ -27,7 +27,7 @@ const profileReducer = (state = initialState, action) => {
 					}],
 					// newPostText: ""
 				}
-			// }
+			}
 			return state
 
 		// case UPDATE_POST_MESSAGE_TEXT:

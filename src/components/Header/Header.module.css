@@ -28,9 +28,16 @@
     margin-right: 10px;
     color: #9099B5;
     font-weight: 500;
+    background: transparent;
 }
 .login_text_login {
     color: #73DAFB;
+}
+
+.logoutWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .img_wrapper {
