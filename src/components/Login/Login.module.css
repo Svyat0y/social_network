@@ -7,3 +7,8 @@
     margin: 3px 0 10px 0;
     display: block;
 }
+.commonError {
+    display: inline-block;
+    color: red;
+    font-size: 14px;
+}

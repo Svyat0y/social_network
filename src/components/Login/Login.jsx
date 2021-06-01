@@ -7,12 +7,14 @@ import {connect} from "react-redux";
 import {login} from "../../Redux/auth-reducer";
 import {Redirect} from "react-router-dom";
 
-
 const Input = Element('input')
 
 const LoginForm = (props) => {
 	return (
 		<form onSubmit={props.handleSubmit}>
+			{props.error && <span className={style.commonError}>
+				{props.error}
+			</span>}
 			<div>
 				<Field name={'email'} placeholder={'email'} component={Input} validate={[required]}/>
 			</div>

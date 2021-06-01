@@ -17,8 +17,8 @@ const Header = (props) => {
 								<NavLink to={'/profile'}><img src={images.imgAvatarNotFound} alt="avatar"/></NavLink>
 							</div>
 						</div>
-
 				}
+
 				{/*<NavLink to={!props.isAuth ? '/login' : '/profile'} className={!props.isAuth ? style.login_text : style.login_text_login}>*/}
 				{/*	{!props.isAuth ? 'login' : 'Logout'}*/}
 				{/*</NavLink>*/}

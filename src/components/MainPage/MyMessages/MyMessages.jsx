@@ -97,7 +97,7 @@ const AddMessageForm = (props) => {
 	)
 }
 
-// наша контейнерная комонента от редак форм, которой мы оборачиваем нашу форму(компоненту)
+// наша контейнерная компонента от redux-form, которой мы оборачиваем нашу форму(компоненту)
 const AddMessageFormRedux = reduxForm({form: 'dialogAddMessageForm'})(AddMessageForm)
 
 export default MyMessages;
