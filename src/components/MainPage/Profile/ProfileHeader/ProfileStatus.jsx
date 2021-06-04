@@ -11,7 +11,7 @@ class ProfileStatus extends React.Component {
 			editMode: true
 		})
 	}
-	deactivatedEditMode = () => {
+	deactivatedEditMode = (props) => {
 		this.setState({
 			editMode: false
 		})
@@ -25,8 +25,9 @@ class ProfileStatus extends React.Component {
 	handleFocus = (event) => {
 		event.target.select();
 	}
+
 	componentDidUpdate(prevProps, prevState, snapshot) {
-		if(prevProps.status !== this.props.status) {
+		if (prevProps.status !== this.props.status) {
 			this.setState({
 				status: this.props.status
 			})

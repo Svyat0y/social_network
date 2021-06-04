@@ -4,7 +4,8 @@ import {faFacebookSquare, faTwitterSquare, faInstagram, faVk, faYoutube, faGithu
 import {faLink} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import images from "../../../../assets/images/images";
-import ProfileStatus from "./ProfileStatus";
+// import ProfileStatus from "./ProfileStatus";
+import ProfileStatusWithHook from "./ProfileStatusWithHook";
 
 const ProfileHeader = (props) => {
 
@@ -20,7 +21,7 @@ const ProfileHeader = (props) => {
 				<div className={style.profileHeader_top_info}>
 					<h1>{props.profile.fullName}</h1>
 
-					<ProfileStatus status={props.status} updateUserStatus={props.updateUserStatus}/>
+					<ProfileStatusWithHook status={props.status} updateUserStatus={props.updateUserStatus}/>
 
 					<span className={style.lfj_title}>Looking for a job: <span>{props.profile.lookingForAJob ? 'yes' : 'no'}</span></span>
 					<span className={style.lfj_desc}>Job description: <span>{props.profile.lookingForAJobDescription}</span></span>
