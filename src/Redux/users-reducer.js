@@ -67,34 +67,50 @@ export const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFe
 export const toggleIsFollowingProgress = (isFollowing, userId) => ({type: TOGGLE_IS_FOLLOWING_PROGRESS, isFollowing, userId})
 
 export const requestUsers = (currentPage, pageSize) => {
-	return (dispatch) => {
+	return async (dispatch) => {
 		dispatch(toggleIsFetching(true))
 		dispatch(setCurrentPage(currentPage))
-		usersAPI.getUsers(currentPage, pageSize).then(data => {
-			dispatch(toggleIsFetching(false))
-			dispatch(setUsers(data.items))
-			dispatch(setTotalCount(data.totalCount))
-		})
+
+		let data = await usersAPI.getUsers(currentPage, pageSize)
+		dispatch(toggleIsFetching(false))
+		dispatch(setUsers(data.items))
+		dispatch(setTotalCount(data.totalCount))
+	}
+}
+
+const followUnfollowFlow = async (dispatch, userId, apiMethod) => {
+	dispatch(toggleIsFollowingProgress(true, userId))
+
+	let data = await apiMethod
+	if (data.resultCode === 0) {
+		dispatch(toggleFollow(userId))
+		dispatch(toggleIsFollowingProgress(false, userId))
 	}
 }
 
 export const followAccept = (userId) => (dispatch) => {
-	dispatch(toggleIsFollowingProgress(true, userId))
-	followedAPI.getSub(userId).then(data => {
-		if (data.resultCode === 0) {
-			dispatch(toggleFollow(userId))
-			dispatch(toggleIsFollowingProgress(false, userId))
-		}
-	})
+		// let apiMethod = followedAPI.getSub(userId)
+		followUnfollowFlow(dispatch, userId, followedAPI.getSub(userId))
+
+		// dispatch(toggleIsFollowingProgress(true, userId))
+		// let data = await apiMethod
+		// if (data.resultCode === 0) {
+		// 	dispatch(toggleFollow(userId))
+		// 	dispatch(toggleIsFollowingProgress(false, userId))
+		// }
 }
 export const unFollowAccept = (userId) => (dispatch) => {
-	dispatch(toggleIsFollowingProgress(true, userId))
-	followedAPI.deleteSub(userId).then(data => {
-		if (data.resultCode === 0) {
-			dispatch(toggleFollow(userId))
-			dispatch(toggleIsFollowingProgress(false, userId))
-		}
-	})
+		followUnfollowFlow(dispatch, userId, followedAPI.deleteSub(userId))
+
+		// let apiMethod = followedAPI.deleteSub(userId)
+
+
+		// dispatch(toggleIsFollowingProgress(true, userId))
+		// let data = await apiMethod
+		// if (data.resultCode === 0) {
+		// 	dispatch(toggleFollow(userId))
+		// 	dispatch(toggleIsFollowingProgress(false, userId))
+		// }
 }
 
 export default usersReducer
