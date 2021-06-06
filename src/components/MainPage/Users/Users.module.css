@@ -50,28 +50,15 @@
     display: block;
     color: #fff;
     margin-bottom: 10px;
+    overflow: hidden;
 }
 .spanName {
     display: inline-block;
     margin-right: 10px;
     color: #73DAFB;
+    word-break: break-word;
 }
 
-.pg_number {
-    display: inline-block;
-    color: white;
-    margin: 0 10px;
-    cursor: pointer;
-    user-select: none;
-}
-.pg_number:active {
-    transform: scale(0.9);
-}
-
-.pg_number_active {
-    color: #73DAFB;
-    transform: scale(1.2);
-}
 
 .preloader_wr {
     width: 85px;

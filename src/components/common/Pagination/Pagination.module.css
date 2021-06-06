@@ -1,0 +1,37 @@
+.paginationWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 17px;
+    margin-top: 10px;
+}
+
+.pg_number {
+    display: inline-block;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    padding: 5px 15px;
+}
+/*.pg_number:active {*/
+/*    transform: scale(0.9);*/
+/*}*/
+
+.pg_number_active {
+    color: #73DAFB;
+    background: rgba(115,218,251, 0.2);
+}
+.numbersBox {
+    margin: 0 20px;
+}
+
+.prevNextBtn {
+    padding: 5px 15px;
+    color: #73DAFB;
+    background: rgba(115,218,251, 0.2);
+    user-select: none;
+    margin: 0 3px;
+}
+.prevNextBtn:active {
+    transform: scale(0.98);
+}

@@ -4,7 +4,6 @@ import {faFacebookSquare, faTwitterSquare, faInstagram, faVk, faYoutube, faGithu
 import {faLink} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import images from "../../../../assets/images/images";
-// import ProfileStatus from "./ProfileStatus";
 import ProfileStatusWithHook from "./ProfileStatusWithHook";
 
 const ProfileHeader = (props) => {
