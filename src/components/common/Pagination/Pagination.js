@@ -14,7 +14,6 @@ const Pagination = ({totalUsersCount, pageSize, currentPage, onPageChanged, port
 	let leftPortionPageNumber = (portionNumber -1) * portionSize + 1
 	let rightPortionPageNumber = portionNumber * portionSize
 
-
 	return (
 
 		<div className={style.paginationWrapper}>
@@ -29,7 +28,7 @@ const Pagination = ({totalUsersCount, pageSize, currentPage, onPageChanged, port
 							onPageChanged(p)
 						}}>{p}</span>)}
 			</div>
-			{portionNumber < portionCount - 1 && <button className={style.prevNextBtn} onClick={() => {setPortionNumber(portionNumber + 1)}}>Next</button>}
+			{portionCount > portionNumber && <button className={style.prevNextBtn} onClick={() => {setPortionNumber(portionNumber + 1)}}>Next</button>}
 			{portionNumber < portionCount - 5 && <button className={style.prevNextBtn} onClick={() => {setPortionNumber(portionNumber + 5)}}>More Next</button>}
 		</div>
 
