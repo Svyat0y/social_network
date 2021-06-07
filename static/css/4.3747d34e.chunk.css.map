@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/components/MainPage/Music/Music.module.css"],"names":[],"mappings":"AAAA,sBACI,cAAe,CACf,gBAAiB,CACjB,eAAmB,CACnB,kBAAmB,CACnB,kBACJ","file":"4.3747d34e.chunk.css","sourcesContent":[".wrapper {\r\n    max-width: 100%;\r\n    min-height: 300px;\r\n    background: #ffffff;\r\n    margin: 35px 15px 0;\r\n    border-radius: 10px;\r\n}"]}
