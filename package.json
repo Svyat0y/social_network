@@ -1,9 +1,9 @@
 {
+  "homepage": "https://nekazsz.github.io/social-network",
   "name": "social-network",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "homepage": "https://github.com/nekazsz/social_network/",
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
@@ -30,7 +30,7 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "clean" : "gh-pages-clean"
+    "clean": "gh-pages-clean"
   },
   "eslintConfig": {
     "extends": [
