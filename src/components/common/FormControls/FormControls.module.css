@@ -1,34 +1,34 @@
 .formControl.error textarea,
 .formControl.error input {
-    animation-duration: .8s;
-    animation-name: validation;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+    /*animation-duration: .8s;*/
+    /*animation-name: validation;*/
+    /*animation-iteration-count: infinite;*/
+    /*animation-direction: alternate;*/
+    border: 1px solid red;
 }
 .formControl .errorMessage {
     font-size: 14px;
-    animation-name: errorMessage;
-    animation-direction: alternate;
-    animation-duration: .8s;
-    animation-iteration-count: infinite;
+    color: red;
+    /*animation-name: errorMessage;*/
+    /*animation-direction: alternate;*/
+    /*animation-duration: .8s;*/
+    /*animation-iteration-count: infinite;*/
 }
 
-@keyframes validation {
-    from {
-        box-shadow: 0 0 10px transparent;
-    }
+/*@keyframes validation {*/
+/*    from {*/
+/*        border: 1px solid red;*/
+/*    }*/
 
-    to {
-        box-shadow: 0 0 10px red;
-    }
-}
-@keyframes errorMessage {
-    from {
-        opacity: 0;
-        color: red;
-    }
-    to {
-        opacity: 100%;
-        color: red;
-    }
-}
+/*    to {*/
+/*        border: 1px solid red;*/
+/*    }*/
+/*}*/
+/*@keyframes errorMessage {*/
+/*    from {*/
+/*        opacity: 0;*/
+/*    }*/
+/*    to {*/
+/*        opacity: 100%;*/
+/*    }*/
+/*}*/

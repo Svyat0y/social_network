@@ -72,7 +72,7 @@ const MyMessages = (props) => {
 		</div>
 	);
 }
-const maxLength300 = maxLengthCreator(5)
+const maxLength300 = maxLengthCreator(300)
 const Textarea = Element('textarea')
 
 

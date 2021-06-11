@@ -23,7 +23,7 @@ const ProfileHeader = (props) => {
 					<ProfileStatusWithHook status={props.status} updateUserStatus={props.updateUserStatus}/>
 
 					<span className={style.lfj_title}>Looking for a job: <span>{props.profile.lookingForAJob ? 'yes' : 'no'}</span></span>
-					<span className={style.lfj_desc}>Job description: <span>{props.profile.lookingForAJobDescription}</span></span>
+					<span className={style.lfj_desc}>Job description: <span>{props.profile.lookingForAJobDescription ? props.profile.lookingForAJobDescription : 'empty'}</span></span>
 				</div>
 
 				<div className={style.about_info_wr}>

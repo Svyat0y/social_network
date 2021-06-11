@@ -5,7 +5,7 @@ import images from "../../../assets/images/images";
 
 const User = (props) => {
 	return (
-		props.users.map(user => <div className={style.wrapper}>
+		props.users.map(user => <div key={user.id} className={style.wrapper}>
 			<div className={style.box_wrapper}>
 				<NavLink to={'/profile/' + user.id}>
 					<div className={style.img_wrapper}>
