@@ -1,7 +1,7 @@
 .wrapper {
     max-width: 85%;
     height: auto;
-    margin: 35px auto;
+    margin: 35px auto 75px;
     border-radius: 10px;
 }
 
@@ -109,4 +109,11 @@
     width: 75px;
     height: 75px;
     margin: 30vh auto;
+}
+
+.settingsError {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    color: red;
 }

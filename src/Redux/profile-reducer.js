@@ -1,4 +1,5 @@
 import {profileAPI, usersAPI} from "../api/api";
+import {stopSubmit} from "redux-form";
 
 const ADD_POST = 'ADD_POST'
 // const UPDATE_POST_MESSAGE_TEXT = 'UPDATE_POST_MESSAGE_TEXT'
@@ -102,6 +103,9 @@ export const saveBioProfile = (profile) => async (dispatch, getState) => {
 	const data = await profileAPI.setOwnProfile(profile)
 	if(data.resultCode === 0) {
 		dispatch(getUserProfile(userId))
+	}
+	else {
+		dispatch(stopSubmit('settings', {_error: data.messages[0]}))
 	}
 }
 

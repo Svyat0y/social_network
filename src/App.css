@@ -28,7 +28,6 @@ html, body {
     height: auto;
     max-width: 1440px;
     margin: 0 auto;
-    line-height: 1;
     font-size: 14px;
     scroll-behavior: smooth;
     -ms-text-size-adjust: 100%;

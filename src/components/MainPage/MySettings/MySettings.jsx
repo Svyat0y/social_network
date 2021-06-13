@@ -13,7 +13,7 @@ const Input = Element('input')
 const Textarea = Element('textarea')
 const maxLength300 = maxLengthCreator(300)
 
-const SettingsForm = ({profile, handleSubmit}) => {
+const SettingsForm = ({profile, handleSubmit, error}) => {
 	return (
 		<form onSubmit={handleSubmit} className={style.bio}>
 			<h5 className={style.block_title}>Main Bio</h5>
@@ -51,6 +51,7 @@ const SettingsForm = ({profile, handleSubmit}) => {
 				</span>
 				</div>
 			})}
+			{error && <span className={style.settingsError}>{error}</span>}
 			<button>Save</button>
 		</form>
 	)
