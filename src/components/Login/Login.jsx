@@ -26,7 +26,7 @@ const LoginForm = (props) => {
 			</div>
 			{
 				props.captchaUrl && <div>
-					<img src={props.captchaUrl}/>
+					<img src={props.captchaUrl} alt='captcha'/>
 					<Field name={'captcha'} placeholder={'captcha'} component={Input} validate={[required]}/>
 				</div>
 			}

@@ -38,6 +38,7 @@ const ProfileHeader = (props) => {
 					<ul className={style.social_icons}>
 						<li>
 							<a target="_blank"
+							   rel="noreferrer"
 							   title={'GitHub'}
 							   href={!props.profile.contacts.github
 								   ? 'https://twitter.com'
@@ -47,6 +48,7 @@ const ProfileHeader = (props) => {
 						</li>
 						<li>
 							<a target="_blank"
+							   rel="noreferrer"
 							   title={'Facebook'}
 							   href={!props.profile.contacts.facebook
 								   ? 'https://facebook.com'
@@ -56,6 +58,7 @@ const ProfileHeader = (props) => {
 						</li>
 						<li>
 							<a target="_blank"
+							   rel="noreferrer"
 							   title={'Instagram'}
 							   href={!props.profile.contacts.instagram
 								   ? 'https://instagram.com'
@@ -65,6 +68,7 @@ const ProfileHeader = (props) => {
 						</li>
 						<li>
 							<a target="_blank"
+							   rel="noreferrer"
 							   title={'Vkontakte'}
 							   href={!props.profile.contacts.vk
 								   ? 'https://vk.com'
@@ -74,6 +78,7 @@ const ProfileHeader = (props) => {
 						</li>
 						<li>
 							<a target="_blank"
+							   rel="noreferrer"
 							   title={'Youtube'}
 							   href={!props.profile.contacts.youtube
 								   ? 'https://youtube.com'
@@ -83,6 +88,7 @@ const ProfileHeader = (props) => {
 						</li>
 						<li>
 							<a target="_blank"
+							   rel="noreferrer"
 							   title={'Twitter'}
 							   href={!props.profile.contacts.twitter
 								   ? 'https://twitter.com'
@@ -94,6 +100,7 @@ const ProfileHeader = (props) => {
 						{!props.profile.contacts.website
 							? null
 							: <li><a target="_blank"
+									 rel="noreferrer"
 									 title={'Website'}
 									 href={props.profile.contacts.website}>
 								<FontAwesomeIcon icon={faLink}/></a></li>}
@@ -101,6 +108,7 @@ const ProfileHeader = (props) => {
 						{!props.profile.contacts.mainLink
 							? null
 							: <li><a target="_blank"
+									 rel="noreferrer"
 									 title={'Mainlink'}
 									 href={props.profile.contacts.mainLink}>
 								<FontAwesomeIcon icon={faLink}/></a></li>}

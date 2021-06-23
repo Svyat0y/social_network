@@ -64,6 +64,7 @@ export const logout = () => async (dispatch) => {
 	let data = await authAPI.logout()
 	if (data.resultCode === 0) {
 		dispatch(setUserData(null, null, null, false))
+		dispatch(setCaptchaUrl(null))
 	}
 }
 
